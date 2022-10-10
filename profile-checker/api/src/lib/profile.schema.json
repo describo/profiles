@@ -1,0 +1,128 @@
+{
+    "title": "Validate Profile",
+    "description": "Validate a describo profile",
+    "type": "object",
+    "properties": {
+        "metadata": {
+            "description": "Metadata about this profile",
+            "type": "object",
+            "properties": {
+                "name": { "type": "string" },
+                "description": { "type": "string" },
+                "version": { "type": "number" },
+                "warnMissingProperty": { "type": "boolean" }
+            },
+            "required": ["name", "description", "version", "warnMissingProperty"],
+            "additionalProperties": false
+        },
+        "rootDatasets": {
+            "description": "Class definitions",
+            "type": "object",
+            "patternProperties": {
+                "^[A-Z,a-z]*": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["type"],
+                    "additionalProperties": false
+                }
+            }
+        },
+        "hide": {
+            "description": "Properties to be hidden in the UI",
+            "type": "object",
+            "patternProperties": {
+                "^[A-Z,a-z]*": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            }
+        },
+        "layouts": {
+            "description": "Layout definitions for property groups",
+            "type": "object",
+            "patternProperties": {
+                "^[A-Z,a-z]*": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": { "type": "string" },
+                            "description": { "type": "string" },
+                            "inputs": { "type": "array", "items": { "type": "string" } }
+                        },
+                        "required": ["name", "inputs", "description"],
+                        "additionalProperties": false
+                    }
+                }
+            }
+        },
+        "classes": {
+            "description": "Class definitions",
+            "type": "object",
+            "patternProperties": {
+                "^[A-Z,a-z]*": {
+                    "type": "object",
+                    "properties": {
+                        "definition": {
+                            "type": "string",
+                            "enum": ["inherit", "override"]
+                        },
+                        "subClassOf": { "type": "array", "items": { "type": "string" } },
+                        "inputs": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": { "type": "string" },
+                                    "name": { "type": "string" },
+                                    "label": { "type": "string" },
+                                    "multiple": { "type": "boolean" },
+                                    "required": { "type": "boolean" },
+                                    "type": {
+                                        "anyOf": [
+                                            { "type": "array", "items": { "type": "string" } },
+                                            {
+                                                "type": "string",
+                                                "enum": ["Select", "MultiSelect", "Value"]
+                                            }
+                                        ]
+                                    }
+                                },
+                                "required": ["id", "name", "help"],
+                                "additionalProperties": true
+                            }
+                        }
+                    },
+                    "required": ["definition", "subClassOf", "inputs"],
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": true
+        },
+        "typeDefinitions": {
+            "type": "array",
+            "items": { "type": "string" }
+        },
+        "lookup": {
+            "description": "Lookup definitions",
+            "type": "object",
+            "patternProperties": {
+                "^[A-Z,a-z]*": {
+                    "type": "object",
+                    "properties": {
+                        "fields": { "type": "array" },
+                        "datapacks": { "type": "array", "items": { "type": "string" } }
+                    },
+                    "required": ["fields", "datapacks"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    "required": ["metadata", "classes"],
+    "additionalProperties": false
+}
