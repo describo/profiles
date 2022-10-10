@@ -9,6 +9,7 @@ as well.
   - [Profile versions - READ THIS](#profile-versions---read-this)
   - [Profile documentation](#profile-documentation)
   - [Profile Validation application](#profile-validation-application)
+  - [Domain Specific profiles](#domain-specific-profiles)
 
 ## Profile versions - READ THIS
 
@@ -46,3 +47,14 @@ your profile in a code editor like VSCode (which will give you formatting and au
 things for you) and then just copy that profile into the editor when you wish to check it.
 
 ![Describo Profile Validator](./profile-validator.png)
+
+## Domain Specific profiles
+
+Example profiles from specific domains can be seen in the
+[domain-profiles folder.](./domain-profiles/). If you'd like to publish your own profile for others
+to work with or use please submit a pull request to this repository. You must:
+
+-   create a folder preferably named by your domain in the `domain-profiles` folder.
+-   name your profiles in there in some sensible way.
+
+Optionally, add a README to your folder - absolutely recommended but not an essential requirement.
