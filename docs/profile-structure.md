@@ -50,7 +50,7 @@ This section contains class definitions a user can use in their dataset descript
 is similar to the hide and layouts sections above where the key is the stringified `@type` and it
 provides the definition of what can and can't be described to the UI.
 
-See [Classes and Inputs for a detailed account of this sections.](./classes-and-inputs.md)
+See [Classes and Inputs for a detailed account of this section.](./classes-and-inputs.md)
 
 ## Lookup
 
