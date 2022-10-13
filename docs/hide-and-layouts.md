@@ -1,5 +1,5 @@
-- [Hide](#hide)
-- [Layouts](#layouts)
+-   [Hide](#hide)
+-   [Layouts](#layouts)
 
 The `hide` and `layouts` sections define how to group properties and which properties should be
 hidden from the UI.
@@ -70,3 +70,31 @@ Like the hide section, you can define layouts for entities with multiple types:
 Although schema.org does not ascribe any meaning to the order of the entities defined in @type, the
 order is used as found in the entity. So an entity with
 `@type = ['RepositoryCollection', 'Dataset']` will not match this layout definition.
+
+## Adding properties to the 'About' tab
+
+You can add properties to the about tab by defining an 'About' layout in your profile:
+
+```
+   "layouts": {
+        "Dataset, RepositoryCollection": [
+            {
+                "name": "About",
+                "description": "",
+                "inputs": ["identifier", "description"]
+            },
+            ...
+```
+
+It must have the name 'About' (capitalised) but otherwise looks like all of the other definitions.
+
+## Renaming the '...' tab
+
+To rename the '...' tab add an entry like the following to your layouts:
+
+```
+{ "name": "...", "label": "Other", "description": "Uncategorised", "inputs": [] }
+```
+
+Notice the extra `label` field. That will be used in the UI in preference to the name property (but
+the name property is required in order to be able to find it so make sure it's in there).
