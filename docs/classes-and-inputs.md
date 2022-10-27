@@ -80,11 +80,11 @@ In this example the profile tells the UI that the value of the author property c
 type Person or Organization. The UI will then guide the user in the creation of those entities or
 linking an entity either existing in the crate or looked up from a datasource elsewhere.
 
+Please see the [detailed documentation on types](./types.md)
+
 ## Note
 
 Any inputs defined in the profile will automatically be rendered to the screen. This is true whether
 the definition is is set to 'override' or 'inherit'. So, if you want a set of properties rendered by
 default (ie show a row for each property as a guide to the user) then define those properties in the
 inputs of the relevant type.
-
-Please see the [detailed documentation on types](./types.md)
