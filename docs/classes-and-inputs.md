@@ -1,5 +1,6 @@
 - [Classes](#classes)
 - [Inputs](#inputs)
+  - [Note](#note)
 
 # Classes
 
@@ -26,12 +27,14 @@ Each class definition has three properties that are all required:
 -   definition: 'override' or 'inherit'. If set to inherit, the UI will allow the user to add
     properties from the class hierarchy defined in schema.org. If set to override, the user will
     only be able to use the properties defined in the inputs to this entity definition. That is, if
-    you want the user to have a limited set of properties to user, set this to `override`. If on the
+    you want the user to have a limited set of properties to use, set this to `override`. If on the
     other hand, all of the properties defined in schema.org are acceptable, set this to `inherit`.
     If you wish to define properties additional to those define in schema.org then define them in
     the inputs array.
 -   subClassOf: An array of classes that this class is a subclass of.
--   inputs: An array of objects that define the properties the user can define for this class.
+-   inputs: An array of objects that define the properties the user can define for this class. All
+    of these properties will be rendered in the UI as placeholders. That will give you a UI that
+    looks like a traditional form with entries for all of the things the user can define.
 
 # Inputs
 
@@ -76,5 +79,12 @@ Properties can link to entities:
 In this example the profile tells the UI that the value of the author property can be an entity of
 type Person or Organization. The UI will then guide the user in the creation of those entities or
 linking an entity either existing in the crate or looked up from a datasource elsewhere.
+
+## Note
+
+Any inputs defined in the profile will automatically be rendered to the screen. This is true whether
+the definition is is set to 'override' or 'inherit'. So, if you want a set of properties rendered by
+default (ie show a row for each property as a guide to the user) then define those properties in the
+inputs of the relevant type.
 
 Please see the [detailed documentation on types](./types.md)
