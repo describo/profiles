@@ -9,7 +9,7 @@ const configuration = merge(common, {
     mode: "production",
     devtool: "source-map",
     output: {
-        path: path.resolve(__dirname, "..", "..", "docs"),
+        path: path.resolve(__dirname, "..", "docs"),
         filename: "[contenthash].js",
         publicPath: "/profiles",
     },
