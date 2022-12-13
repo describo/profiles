@@ -8,7 +8,9 @@ as well.
 - [Describo Profiles](#describo-profiles)
   - [Profile versions - READ THIS](#profile-versions---read-this)
   - [Profile documentation](#profile-documentation)
-  - [Profile Validation application](#profile-validation-application)
+  - [Profile Validation](#profile-validation)
+    - [Github Pages Profile Validation application](#github-pages-profile-validation-application)
+    - [Local Validation application](#local-validation-application)
   - [Domain Specific profiles](#domain-specific-profiles)
 
 ## Profile versions - READ THIS
@@ -31,7 +33,15 @@ profiles are a way for a community to tell Describo exactly what users are allow
     -   [Lookup](./docs/lookup.md)
     -   [Types](./docs/types.md)
 
-## Profile Validation application
+## Profile Validation
+
+### Github Pages Profile Validation application
+
+You can validate your profile directly in Github at
+[https://describo.github.io/profiles/](https://describo.github.io/profiles/). Otherwise, read on to
+find out how to run the app on your local machine.
+
+### Local Validation application
 
 The repo contains a small VueJS/NodeJS app that you can run on your machine to validate the profile.
 You will need docker to run it. To run it:
