@@ -35,7 +35,6 @@ import { debounce } from "lodash";
 import { onMounted, ref, reactive, inject } from "vue";
 import { validateProfile as profileValidator } from "./lib.js";
 
-// const $http = inject("$http");
 const debouncedValidateProfile = debounce(validateProfile, 500);
 let data = reactive({ cm: undefined, validation: [], formattingError: false });
 
@@ -77,18 +76,6 @@ async function validateProfile() {
         return;
     }
     data.validation = await profileValidator({ profile });
-    // let response = await $http.post({
-    //     route: "/validate-profile",
-    //     body: { profile },
-    // });
-    // console.log(response);
-    // if (response.status === 200) {
-    //     data.validation = await response.json();
-    // } else {
-    //     data.profileValidation = {
-    //         errors: [{ message: "profile validation failed with an unknown error" }],
-    //     };
-    // }
 }
 </script>
 
