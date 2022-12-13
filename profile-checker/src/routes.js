@@ -10,8 +10,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory("/"),
-    base: process.env.NODE_ENV === "development" ? "/" : "/profiles/",
+    history: createWebHistory(process.env.NODE_ENV === "development" ? "/" : "/profiles/"),
     routes,
 });
 export default router;
