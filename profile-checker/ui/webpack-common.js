@@ -10,7 +10,7 @@ module.exports = {
     target: "web",
     entry: ["./src/main.js"],
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "..", "docs"),
         filename: "[contenthash].js",
         publicPath: "/",
     },
@@ -67,10 +67,10 @@ module.exports = {
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 type: "asset/resource",
-	    },
-	    {
-		test: /\.(geo)json$/,
-		loader: "json-loader",
+            },
+            {
+                test: /\.(geo)json$/,
+                loader: "json-loader",
             },
         ],
     },
