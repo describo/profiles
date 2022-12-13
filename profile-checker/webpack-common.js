@@ -9,11 +9,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     target: "web",
     entry: ["./src/main.js"],
-    // output: {
-    //     path: path.resolve(__dirname, "..", "..", "docs"),
-    //     filename: "[contenthash].js",
-    //     publicPath: "/profiles",
-    // },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({

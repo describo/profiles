@@ -19,9 +19,7 @@ const configuration = merge(common, {
     },
     plugins: [
         new webpack.DefinePlugin({
-            PRODUCTION: JSON.stringify(true),
-            DEVELOPMENT: JSON.stringify(false),
-            // VERSION: JSON.stringify("5fa3b9"),
+            "process.env.NODE_ENV": "production",
             __VUE_OPTIONS_API__: JSON.stringify(true),
             __VUE_PROD_DEVTOOLS__: JSON.stringify(false),
         }),
