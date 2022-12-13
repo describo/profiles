@@ -5,6 +5,11 @@ const common = require("./webpack-common");
 const configuration = merge(common, {
     mode: "development",
     devtool: "eval-source-map",
+    output: {
+        path: path.resolve(__dirname, "..", "..", "docs"),
+        filename: "[contenthash].js",
+        publicPath: "/",
+    },
     devServer: {
         static: {
             directory: path.join(__dirname, "dist"),

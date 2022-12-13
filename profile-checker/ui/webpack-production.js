@@ -3,16 +3,19 @@ const common = require("./webpack-common");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const webpack = require("webpack");
+const path = require("path");
 
 const configuration = merge(common, {
     mode: "production",
     devtool: "source-map",
+    output: {
+        path: path.resolve(__dirname, "..", "..", "docs"),
+        filename: "[contenthash].js",
+        publicPath: "/profiles",
+    },
     optimization: {
         minimize: true,
         minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
-    },
-    output: {
-        publicPath: "/",
     },
     plugins: [
         new webpack.DefinePlugin({
