@@ -15,7 +15,7 @@ services:
             TERM: "xterm-256color"
             NODE_ENV: "development"
         volumes:
-            - ./ui:/srv/ui:delegated
+            - ./:/srv/ui:delegated
             - .git:/srv/ui/.git:delegated
             - ui_node_modules:/srv/ui/node_modules:delegated
         working_dir: /srv/ui
