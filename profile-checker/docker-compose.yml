@@ -8,7 +8,7 @@ volumes:
 
 services:
     ui:
-        image: node:14-buster
+        image: node:18-bullseye
         hostname: ui
         tty: true
         environment:
