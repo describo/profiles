@@ -27,42 +27,15 @@
 </template>
 
 <script setup>
-import {
-    EditorView,
-    keymap,
-    highlightSpecialChars,
-    drawSelection,
-    highlightActiveLine,
-    dropCursor,
-    rectangularSelection,
-    crosshairCursor,
-    lineNumbers,
-    highlightActiveLineGutter,
-} from "@codemirror/view";
-import { EditorState, Text, Transaction } from "@codemirror/state";
-import {
-    defaultHighlightStyle,
-    syntaxHighlighting,
-    indentOnInput,
-    bracketMatching,
-    foldGutter,
-    foldKeymap,
-} from "@codemirror/language";
-import { defaultKeymap, history, historyKeymap, undo, redo } from "@codemirror/commands";
-import { searchKeymap, highlightSelectionMatches } from "@codemirror/search";
+import { EditorView, basicSetup } from "codemirror";
+import { EditorState } from "@codemirror/state";
 import { oneDark } from "@codemirror/theme-one-dark";
-import {
-    autocompletion,
-    completionKeymap,
-    closeBrackets,
-    closeBracketsKeymap,
-} from "@codemirror/autocomplete";
 import { javascript, javascriptLanguage } from "@codemirror/lang-javascript";
-
 import { debounce } from "lodash";
 import { onMounted, ref, reactive, inject } from "vue";
+import { validateProfile as profileValidator } from "./lib.js";
 
-const $http = inject("$http");
+// const $http = inject("$http");
 const debouncedValidateProfile = debounce(validateProfile, 500);
 let data = reactive({ cm: undefined, validation: [], formattingError: false });
 
@@ -76,33 +49,9 @@ function setupCodeMirror() {
     const initialState = EditorState.create({
         doc: data.transcription,
         extensions: [
+            basicSetup,
             EditorView.lineWrapping,
-            lineNumbers(),
-            highlightActiveLineGutter(),
-            highlightSpecialChars(),
-            history(),
-            foldGutter(),
-            drawSelection(),
-            dropCursor(),
-            EditorState.allowMultipleSelections.of(true),
-            indentOnInput(),
-            syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
-            bracketMatching(),
-            closeBrackets(),
-            autocompletion(),
-            rectangularSelection(),
-            crosshairCursor(),
-            highlightActiveLine(),
-            highlightSelectionMatches(),
             oneDark,
-            keymap.of([
-                ...closeBracketsKeymap,
-                ...defaultKeymap,
-                ...searchKeymap,
-                ...historyKeymap,
-                ...foldKeymap,
-                ...completionKeymap,
-            ]),
             javascript(),
             javascriptLanguage,
         ],
@@ -121,25 +70,25 @@ async function validateProfile() {
     if (!profile) {
         return;
     }
-
     try {
         profile = JSON.parse(profile);
     } catch (error) {
         data.formattingError = error.message;
         return;
     }
-    let response = await $http.post({
-        route: "/validate-profile",
-        body: { profile },
-    });
-    console.log(response);
-    if (response.status === 200) {
-        data.validation = await response.json();
-    } else {
-        data.profileValidation = {
-            errors: [{ message: "profile validation failed with an unknown error" }],
-        };
-    }
+    data.validation = await profileValidator({ profile });
+    // let response = await $http.post({
+    //     route: "/validate-profile",
+    //     body: { profile },
+    // });
+    // console.log(response);
+    // if (response.status === 200) {
+    //     data.validation = await response.json();
+    // } else {
+    //     data.profileValidation = {
+    //         errors: [{ message: "profile validation failed with an unknown error" }],
+    //     };
+    // }
 }
 </script>
 

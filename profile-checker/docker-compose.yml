@@ -7,30 +7,6 @@ volumes:
         driver: local
 
 services:
-    api:
-        image: node:14-buster
-        hostname: api
-        tty: true
-        environment:
-            TERM: "xterm-256color"
-            NODE_ENV: "development"
-            DB_HOST: "db"
-            DB_PORT: "5432"
-            DB_USER: "root"
-            DB_PASSWORD: "root"
-            DB_DATABASE: "describo"
-            ADMIN_PASSWORD: "adminpass"
-        volumes:
-            - ./api:/srv/api:delegated
-            - .git:/srv/api/.git:delegated
-            - api_node_modules:/srv/api/node_modules:delegated
-        working_dir: /srv/api
-        command:
-            [
-                "npm",
-                "run",
-                "develop"
-            ]
     ui:
         image: node:14-buster
         hostname: ui
