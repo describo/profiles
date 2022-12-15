@@ -1,5 +1,8 @@
-import Ajv from "ajv";
+// import Ajv from "ajv";
+import Ajv from "ajv/dist/2019";
 import schema from "./profile.schema.json";
+
+// see https://ajv.js.org/json-schema.html
 
 export async function validateProfile({ profile }) {
     const ajv = new Ajv();
