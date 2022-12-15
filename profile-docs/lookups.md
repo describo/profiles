@@ -34,9 +34,9 @@ case we're definining lookups for entities of type Language.
 
 Each lookup definition has two properties that are both required:
 
--   fields: an array of strings defining the properties on which to perform a lookup.
--   datapacks: an array of URL's to publically accessible data sources (JSON-LD) snippets to be used
-    for the lookup.
+-   `fields`: an array of strings defining the properties on which to perform a lookup.
+-   `datapacks`: an array of URL's to publically accessible data sources (JSON-LD) snippets to be
+    used for the lookup.
 
 Lookups are specific to the
 [Crate Builder Component are described in that repository.](https://github.com/describo/crate-builder-component#configuration)

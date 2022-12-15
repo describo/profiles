@@ -8,7 +8,7 @@ The simple data types you can define for a type are as follows:
 
 ## Text
 
--   Text: a simple text box
+-   `Text`: a simple text box
 
 ```
 {
@@ -21,7 +21,7 @@ The simple data types you can define for a type are as follows:
 
 ## TextArea
 
--   TextArea: a simple text area box
+-   `TextArea`: a simple text area box
 
 ```
 {
@@ -34,7 +34,7 @@ The simple data types you can define for a type are as follows:
 
 ## Number
 
--   Number: A number input
+-   `Number`: A number input
 
 ```
 {
@@ -47,9 +47,9 @@ The simple data types you can define for a type are as follows:
 
 ## Date, DateTime, Time
 
--   Date: A date input
--   DateTime: A date time input
--   Time: A time input
+-   `Date`: A date input
+-   `DateTime`: A date time input
+-   `Time`: A time input
 
 ```
 {
@@ -62,7 +62,7 @@ The simple data types you can define for a type are as follows:
 
 ## Geo
 
--   Geo: A geo selection input; allows selecting an area or a single point
+-   `Geo`: A geo selection input; allows selecting an area or a single point
 
 ```
 {
@@ -75,7 +75,7 @@ The simple data types you can define for a type are as follows:
 
 ## URL
 
--   URL: Allows the user to input a URL
+-   `URL`: Allows the user to input a URL
 
 ```
 {
@@ -97,7 +97,7 @@ are: 'http', 'https', 'ftp', 'ftps', 'arcp'.
 
 ## Select, SelectURL, SelectObject
 
--   Select: A control where the user can select from a number of predefined options:
+-   `Select`: A control where the user can select from a number of predefined options:
 
 ```
 {
@@ -110,7 +110,7 @@ are: 'http', 'https', 'ftp', 'ftps', 'arcp'.
 },
 ```
 
--   SelectURL: A control where the user can select from a number of predefined URLs and get back a
+-   `SelectURL`: A control where the user can select from a number of predefined URLs and get back a
     URL object:
 
 ```
@@ -123,7 +123,7 @@ are: 'http', 'https', 'ftp', 'ftps', 'arcp'.
 },
 ```
 
--   SelectObject: A control where the user can select from a number of complete objects defined in
+-   `SelectObject`: A control where the user can select from a number of complete objects defined in
     the profile:
 
 ```
@@ -141,7 +141,7 @@ returns the selected object as defined and links it into the graph.
 
 ## Value
 
--   Value: A control where a specified value is set for a property
+-   `Value`: A control where a specified value is set for a property
 
 ```
 {

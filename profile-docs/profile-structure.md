@@ -27,12 +27,13 @@ The structure of a profile is as follows:
 
 The metadata section is used to describe the profile. There are 4 properties you must provide:
 
--   name: A short name for this profile. This may be provided in the UI so it should make sense to a
-    user.
--   description: A short description for this profile.
--   version: A version number.
--   warnMissingProperty: true or false: Whether or not the UI should warn when data is found in an
+-   `name`: A short name for this profile. This may be provided in the UI so it should make sense to
+    a user.
+-   `description`: A short description for this profile.
+-   `version`: A version number.
+-   `warnMissingProperty`: true or false: Whether or not the UI should warn when data is found in an
     RO-crate but a definition for is not found in the profile.
+-   `keywords`: An array of keywords to enable lookups of this profile.
 
 ## Hide / Layouts
 
