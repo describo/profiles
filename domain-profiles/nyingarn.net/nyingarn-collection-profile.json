@@ -431,7 +431,6 @@
             "inputs": []
         }
     },
-    "enabledClasses": ["Dataset", "Person", "Place", "Organization", "Language"],
     "lookup": {
         "Language": {
             "fields": [
