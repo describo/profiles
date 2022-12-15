@@ -27,11 +27,11 @@ Describo profiles are a way to limit what your users can describe. By default, D
 available all of Schema.org. Often times we don't want to expose all of this to our users so
 profiles are a way for a community to tell Describo exactly what users are allowed to describe.
 
--   [Profile Structure](./docs/profile-structure.md)
-    -   [Classes and Inputs](./docs/classes-and-inputs.md)
-    -   [Hide and Layouts](./docs/hide-and-layouts.md)
-    -   [Lookup](./docs/lookup.md)
-    -   [Types](./docs/types.md)
+-   [Profile Structure](./profile-docs/profile-structure.md)
+    -   [Classes and Inputs](./profile-docs/classes-and-inputs.md)
+    -   [Hide and Layouts](./profile-docs/hide-and-layouts.md)
+    -   [Lookup](./profile-docs/lookup.md)
+    -   [Types](./profile-docs/types.md)
 
 ## Profile Validation
 
