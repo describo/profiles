@@ -64,17 +64,20 @@
                 {
                     "id": "https://schema.org/email",
                     "name": "email",
+                    "help": "An email address.",
                     "multiple": true,
                     "type": ["Text"]
                 },
                 {
                     "id": "https://schema.org/affiliation",
+                    "help": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
                     "name": "affiliation",
                     "multiple": true,
                     "type": ["Organization"]
                 },
                 {
                     "id": "https://schema.org/contactPoint",
+                    "help": "A contact point for a person or organization.",
                     "name": "contactPoint",
                     "multiple": true,
                     "type": ["ContactPoint"]
