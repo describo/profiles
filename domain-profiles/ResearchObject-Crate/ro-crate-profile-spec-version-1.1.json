@@ -1,0 +1,86 @@
+{
+    "metadata": {
+        "name": "Research Object Crate Profile - Spec Version",
+        "description": "A profile satisfying the requirements of the RO Crate Spec version 1.1",
+        "version": 1.1,
+        "warnMissingProperty": true,
+        "keywords": ["RO Crate", "Spec Version 1.1"]
+    },
+    "layouts": {
+        "Dataset": [
+            {
+                "name": "About",
+                "description": "",
+                "inputs": ["description", "datePublished", "license", "publisher"]
+            }
+        ]
+    },
+    "classes": {
+        "Dataset": {
+            "definition": "inherit",
+            "subClassOf": [],
+            "inputs": [
+                {
+                    "id": "https://schema.org/description",
+                    "name": "description",
+                    "label": "Description",
+                    "help": "A description of the item.",
+                    "required": true,
+                    "multiple": true,
+                    "type": ["TextArea"]
+                },
+                {
+                    "id": "https://schema.org/datePublished",
+                    "name": "datePublished",
+                    "label": "Date Published",
+                    "help": "Date of first broadcast/publication.",
+                    "required": true,
+                    "multiple": false,
+                    "type": ["Date", "DateTime"]
+                },
+                {
+                    "id": "https://schema.org/license",
+                    "name": "license",
+                    "label": "License",
+                    "help": "A license document that applies to this content, typically indicated by URL.",
+                    "required": true,
+                    "multiple": false,
+                    "type": ["CreaiveWork", "URL"]
+                },
+                {
+                    "id": "https://schema.org/publisher",
+                    "name": "publisher",
+                    "label": "Publisher",
+                    "help": "The publisher of the creative work.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"]
+                }
+            ]
+        },
+        "Person": {
+            "definition": "inherit",
+            "subClassOf": [],
+            "inputs": [
+                {
+                    "id": "https://schema.org/email",
+                    "name": "email",
+                    "multiple": true,
+                    "type": ["Text"]
+                },
+                {
+                    "id": "https://schema.org/affiliation",
+                    "name": "affiliation",
+                    "multiple": true,
+                    "type": ["Organization"]
+                },
+                {
+                    "id": "https://schema.org/contactPoint",
+                    "name": "contactPoint",
+                    "multiple": true,
+                    "type": ["ContactPoint"]
+                }
+            ]
+        }
+    },
+    "lookup": {}
+}

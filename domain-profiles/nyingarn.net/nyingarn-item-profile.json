@@ -3,23 +3,27 @@
         "name": "NYINGARN Profile",
         "description": "Am item profile for the NYINGARN project",
         "version": 0.1,
-        "warnMissingProperty": true
+        "warnMissingProperty": true,
+        "keywords": ["languages", "Australian Languages", "Item Metadata"]
     },
     "hide": {
-        "Dataset": ["memberOf"]
+        "Dataset": []
     },
     "layouts": {
         "Dataset": [
             {
-                "name": "Core Metadata",
+                "name": "About",
                 "description": "",
-                "inputs": ["identifier", "description", "language", "languageName", "subject"]
+                "inputs": [
+                    "identifier",
+                    "description",
+                    "contentLanguage",
+                    "subjectLanguage",
+                    "languageName",
+                    "subject"
+                ]
             },
-            {
-                "name": "Location",
-                "description": "",
-                "inputs": ["location"]
-            },
+
             {
                 "name": "Original Source Information",
                 "description": "",
@@ -33,6 +37,7 @@
                     "originalForm"
                 ]
             },
+
             {
                 "name": "Permissions",
                 "description": "",
@@ -74,6 +79,11 @@
                     "transcriber",
                     "translator"
                 ]
+            },
+            {
+                "name": "Location",
+                "description": "",
+                "inputs": ["location"]
             }
         ],
         "Place": [{ "name": "important", "description": "", "inputs": ["geojson"] }]
@@ -288,10 +298,18 @@
                     "type": ["Text"]
                 },
                 {
-                    "id": "http://schema.org/language",
-                    "name": "language",
-                    "label": "",
-                    "help": "AIATSIS standard language code",
+                    "id": "http://schema.org/contentLanguage",
+                    "name": "contentLanguage",
+                    "label": "Content Language",
+                    "help": "The Indigenous language(s) that are the subject of the document. Use the AIATSIS language definition.",
+                    "multiple": true,
+                    "type": ["Language"]
+                },
+                {
+                    "id": "http://schema.org/subjectLanguage",
+                    "name": "subjectLanguage",
+                    "label": "Subject Language",
+                    "help": "The other language(s) used in the document (e.g. English).",
                     "multiple": true,
                     "type": ["Language"]
                 },
