@@ -12,7 +12,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: "Describo Online",
+            title: "Describo Profiles",
             template: "./public/index.html",
         }),
         new VueLoaderPlugin(),
