@@ -45,7 +45,7 @@
                     "help": "A license document that applies to this content, typically indicated by URL.",
                     "required": true,
                     "multiple": false,
-                    "type": ["CreaiveWork", "URL"]
+                    "type": ["CreativeWork", "URL"]
                 },
                 {
                     "id": "https://schema.org/publisher",
