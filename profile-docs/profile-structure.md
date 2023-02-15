@@ -60,4 +60,4 @@ country definition. Rather than asking a user to create an entity of type Countr
 relevant properties to adequately describe it, you could just provide a lookup to a pre defined
 Country definition that they can inject into the crate.
 
-See [Lookups for a detailed account of this section.](./docs/lookup.md)
+See [Lookups for a detailed account of this section.](./lookup.md)

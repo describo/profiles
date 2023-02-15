@@ -1,4 +1,11 @@
-# Types
+- [Text](#text)
+- [TextArea](#textarea)
+- [Number](#number)
+- [Date, DateTime, Time](#date-datetime-time)
+- [Geo](#geo)
+- [URL](#url)
+- [Select, SelectURL, SelectObject](#select-selecturl-selectobject)
+- [Value](#value)
 
 The types property tells Describo what type of data can be provided for a property. It can be an
 array of classes like `["Person", "Organisation"]` or simple data types like

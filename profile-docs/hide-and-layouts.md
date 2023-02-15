@@ -1,5 +1,7 @@
--   [Hide](#hide)
--   [Layouts](#layouts)
+- [Hide](#hide)
+- [Layouts](#layouts)
+  - [Adding properties to the 'About' tab](#adding-properties-to-the-about-tab)
+  - [Renaming the '...' tab](#renaming-the--tab)
 
 The `hide` and `layouts` sections define how to group properties and which properties should be
 hidden from the UI.
