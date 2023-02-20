@@ -16,6 +16,9 @@
             "required": ["name", "description", "version"],
             "additionalProperties": false
         },
+        "context": {
+            "type": "array"
+        },
         "hide": {
             "description": "Properties to be hidden in the UI",
             "type": "object",
