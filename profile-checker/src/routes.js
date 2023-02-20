@@ -1,4 +1,4 @@
-import ShellComponent from "@/components/Shell.component.vue";
+import ShellComponent from "./components/Shell.component.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [

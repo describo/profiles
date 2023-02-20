@@ -1,5 +1,5 @@
 import "regenerator-runtime";
-import "@/assets/tailwind.css";
+import "./assets/tailwind.css";
 import "element-plus/dist/index.css";
 import "@fortawesome/fontawesome-free/js/all";
 import { config } from "@fortawesome/fontawesome-svg-core";
