@@ -6,9 +6,12 @@ provide one for the classes and properties defined in the profile.
 From the
 [section on contexts in the JSON-LD specification](https://www.w3.org/TR/json-ld11/#the-context):
 
-```
-When two people communicate with one another, the conversation takes place in a shared environment, typically called "the context of the conversation". This shared context allows the individuals to use shortcut terms, like the first name of a mutual friend, to communicate more quickly but without losing accuracy. A context in JSON-LD works in the same way. It allows two applications to use shortcut terms to communicate with one another more efficiently, but without losing accuracy.
-```
+> When two people communicate with one another, the conversation takes place in a shared
+> environment, typically called "the context of the conversation". This shared context allows the
+> individuals to use shortcut terms, like the first name of a mutual friend, to communicate more
+> quickly but without losing accuracy. A context in JSON-LD works in the same way. It allows two
+> applications to use shortcut terms to communicate with one another more efficiently, but without
+> losing accuracy.
 
 Following is a stripped down example of the structure of an RO-Crate file with the RO Crate context:
 
