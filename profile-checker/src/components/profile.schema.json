@@ -17,7 +17,9 @@
             "additionalProperties": false
         },
         "context": {
-            "type": "array"
+            "type": {
+                "oneOf": [{ "type": "array" }, { "type": "string" }, { "type": "object" }]
+            }
         },
         "hide": {
             "description": "Properties to be hidden in the UI",
