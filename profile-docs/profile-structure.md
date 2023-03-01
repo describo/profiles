@@ -2,6 +2,7 @@
 
 - [Profile Structure](#profile-structure)
   - [Metadata](#metadata)
+  - [Context](#context)
   - [Hide / Layouts](#hide--layouts)
   - [Classes](#classes)
   - [Lookup](#lookup)
@@ -11,6 +12,8 @@ The structure of a profile is as follows:
 ```
 {
     "metadata": {
+    },
+    "context": {
     },
     "hide": {
     },
@@ -34,6 +37,14 @@ The metadata section is used to describe the profile. There are 4 properties you
 -   `warnMissingProperty`: true or false: Whether or not the UI should warn when data is found in an
     RO-crate but a definition for is not found in the profile.
 -   `keywords`: An array of keywords to enable lookups of this profile.
+
+## Context
+
+The context section allows you to provide a context for this profile. Although optional, it is
+highly recommended that you provide a context that suits the profile you have created. Describo will
+then disable the context editor and emit crates with this context in it.
+
+See [All about contexts]('./contexts.md') for more information.
 
 ## Hide / Layouts
 
