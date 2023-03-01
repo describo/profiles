@@ -8,5 +8,8 @@ export default defineConfig({
         host: "0.0.0.0",
         port: "9000",
     },
+    build: {
+        outDir: "../docs",
+    },
     plugins: [vue(), viteCommonjs()],
 });
