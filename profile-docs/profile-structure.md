@@ -44,7 +44,7 @@ The context section allows you to provide a context for this profile. Although o
 highly recommended that you provide a context that suits the profile you have created. Describo will
 then disable the context editor and emit crates with this context in it.
 
-See [All about contexts]('./contexts.md') for more information.
+See [All about contexts](./contexts.md) for more information.
 
 ## Hide / Layouts
 
