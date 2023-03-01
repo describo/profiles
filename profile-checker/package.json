@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "develop": "npm install && vite",
-        "build": "npm install && vite build",
+        "build": "npm install && vite build --base=/profiles",
         "preview": "npm install && vite preview"
     },
     "dependencies": {
