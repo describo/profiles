@@ -30,7 +30,7 @@ profiles are a way for a community to tell Describo exactly what users are allow
 -   [Profile Structure](./profile-docs/profile-structure.md)
     -   [Classes and Inputs](./profile-docs/classes-and-inputs.md)
     -   [Hide and Layouts](./profile-docs/hide-and-layouts.md)
-    -   [Lookup](./profile-docs/lookup.md)
+    -   [Lookup](./profile-docs/lookups.md)
     -   [Types](./profile-docs/types.md)
 
 ## Profile Validation
