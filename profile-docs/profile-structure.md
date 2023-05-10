@@ -1,11 +1,12 @@
 # Profile Structure
 
-- [Profile Structure](#profile-structure)
-  - [Metadata](#metadata)
-  - [Context](#context)
-  - [Hide / Layouts](#hide--layouts)
-  - [Classes](#classes)
-  - [Lookup](#lookup)
+-   [Profile Structure](#profile-structure)
+    -   [Metadata](#metadata)
+    -   [Context](#context)
+    -   [Resolve](#resolve)
+    -   [Hide / Layouts](#hide--layouts)
+    -   [Classes](#classes)
+    -   [Lookup](#lookup)
 
 The structure of a profile is as follows:
 
@@ -15,6 +16,7 @@ The structure of a profile is as follows:
     },
     "context": {
     },
+    "resolve": [],
     "hide": {
     },
     "layouts": {
@@ -45,6 +47,13 @@ highly recommended that you provide a context that suits the profile you have cr
 then disable the context editor and emit crates with this context in it.
 
 See [All about contexts](./contexts.md) for more information.
+
+## Resolve
+
+The resolve section allows you to specify that entities linked from relationship type entities (e.g.
+Relationships and Actions - Create, Move, Update etc.) are to be displayed.
+
+See [All about resolve](./resolve.md) for more information.
 
 ## Hide / Layouts
 
