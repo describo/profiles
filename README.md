@@ -5,13 +5,13 @@ should act. This repository is the documentation for writing a profile. It also 
 application you can use to validate your profile. And there are example profiles in the repository
 as well.
 
-- [Describo Profiles](#describo-profiles)
-  - [Profile versions - READ THIS](#profile-versions---read-this)
-  - [Profile documentation](#profile-documentation)
-  - [Profile Validation](#profile-validation)
-    - [Github Pages Profile Validation application](#github-pages-profile-validation-application)
-    - [Local Validation application](#local-validation-application)
-  - [Domain Specific profiles](#domain-specific-profiles)
+-   [Describo Profiles](#describo-profiles)
+    -   [Profile versions - READ THIS](#profile-versions---read-this)
+    -   [Profile documentation](#profile-documentation)
+    -   [Profile Validation](#profile-validation)
+        -   [Github Pages Profile Validation application](#github-pages-profile-validation-application)
+        -   [Local Validation application](#local-validation-application)
+    -   [Domain Specific profiles](#domain-specific-profiles)
 
 ## Profile versions - READ THIS
 
@@ -29,6 +29,7 @@ profiles are a way for a community to tell Describo exactly what users are allow
 
 -   [Profile Structure](./profile-docs/profile-structure.md)
     -   [Classes and Inputs](./profile-docs/classes-and-inputs.md)
+    -   [Resolve](./profile-docs/resolve.md)
     -   [Hide and Layouts](./profile-docs/hide-and-layouts.md)
     -   [Lookup](./profile-docs/lookups.md)
     -   [Types](./profile-docs/types.md)
