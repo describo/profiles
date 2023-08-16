@@ -25,11 +25,11 @@ In this example we have two configurations:
 -   the second defines `CreateAction and EditAction` to have the `object, participant, and agent`
     properties resolved.
 
-With the resolve property you see:
-![create action displayed with resolve](./create-action-unresolved.png)
+Without the resolve property you see:
+![create action displayed with resolve](./images/without-resolve-definition.png)
 
 With the resolve definition above you see:
-![create action and relationsgip with resolve](./create-action-and-relationship-resolved.png)
+![create action and relationsgip with resolve](./images/with-resolve-definition.png)
 
 With a resolve property, the user can navigate to the linking entity or directly to something it is
 about.
