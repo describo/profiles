@@ -1,7 +1,7 @@
-- [Hide](#hide)
-- [Layouts](#layouts)
-  - [Adding properties to the 'About' tab](#adding-properties-to-the-about-tab)
-  - [Renaming the '...' tab](#renaming-the--tab)
+-   [Hide](#hide)
+-   [Layouts](#layouts)
+    -   [Adding properties to the 'About' tab](#adding-properties-to-the-about-tab)
+    -   [Renaming the '...' tab](#renaming-the--tab)
 
 The `hide` and `layouts` sections define how to group properties and which properties should be
 hidden from the UI.
@@ -13,7 +13,7 @@ how to deal with that entity when rendering the UI.
 
 The hide section looks as follows:
 
-```
+```JSON
 "hide": {
     "Dataset": ["memberOf"],
     "Dataset, RepositoryCollection": ["memberOf"]
@@ -29,7 +29,7 @@ in any way. It's just not displayed.
 
 The structure of the layouts section is similar to hide.
 
-```
+```JSON
  "layouts": {
     "Dataset": [
         {
@@ -61,7 +61,7 @@ properties to be displayed on that tab.
 
 Like the hide section, you can define layouts for entities with multiple types:
 
-```
+```JSON
 "layouts": {
     "Dataset, RepositoryCollection": [
       ...
@@ -77,7 +77,7 @@ order is used as found in the entity. So an entity with
 
 You can add properties to the about tab by defining an 'About' layout in your profile:
 
-```
+```JSON
    "layouts": {
         "Dataset, RepositoryCollection": [
             {
@@ -94,7 +94,7 @@ It must have the name 'About' (capitalised) but otherwise looks like all of the 
 
 To rename the '...' tab add an entry like the following to your layouts:
 
-```
+```JSON
 { "name": "...", "label": "Other", "description": "Uncategorised", "inputs": [] }
 ```
 

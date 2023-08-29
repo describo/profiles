@@ -10,7 +10,7 @@
 
 The structure of a profile is as follows:
 
-```
+```JSON
 {
     "metadata": {
     },

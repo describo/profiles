@@ -1,4 +1,4 @@
-- [Lookups](#lookups)
+-   [Lookups](#lookups)
 
 # Lookups
 
@@ -9,7 +9,7 @@ Language definition that they can inject into the crate.
 
 The overall structure of the lookup section is as follows:
 
-```
+```JSON
 "lookup": {
     "Language": {
         "fields": [
