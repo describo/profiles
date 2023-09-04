@@ -1,12 +1,12 @@
 # Profile Structure
 
--   [Profile Structure](#profile-structure)
-    -   [Metadata](#metadata)
-    -   [Context](#context)
-    -   [Resolve](#resolve)
-    -   [Hide / Layouts](#hide--layouts)
-    -   [Classes](#classes)
-    -   [Lookup](#lookup)
+- [Profile Structure](#profile-structure)
+  - [Metadata](#metadata)
+  - [Context](#context)
+  - [Resolve](#resolve)
+  - [Layouts](#layouts)
+  - [Classes](#classes)
+  - [Lookup](#lookup)
 
 The structure of a profile is as follows:
 
@@ -17,8 +17,6 @@ The structure of a profile is as follows:
     "context": {
     },
     "resolve": [],
-    "hide": {
-    },
     "layouts": {
     },
     "classes": {
@@ -55,15 +53,11 @@ Relationships and Actions - Create, Move, Update etc.) are to be displayed.
 
 See [All about resolve](./resolve.md) for more information.
 
-## Hide / Layouts
+## Layouts
 
-These sections define how to group properties into sections and which properties should be hidden
-from the UI.
+This section define how to group properties into sections.
 
-Each section is an object keyed on the name of the entity (e.g. Dataset) and the configuration for
-how to deal with that entity when rendering the UI.
-
-See [Hide and Layouts for a detailed account of these sections.](./hide-and-layouts.md)
+See [Layouts for a detailed account of these sections.](./layouts.md)
 
 ## Classes
 
@@ -80,4 +74,4 @@ country definition. Rather than asking a user to create an entity of type Countr
 relevant properties to adequately describe it, you could just provide a lookup to a pre defined
 Country definition that they can inject into the crate.
 
-See [Lookups for a detailed account of this section.](./lookup.md)
+See [Lookups for a detailed account of this section.](./lookups.md)

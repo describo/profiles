@@ -6,7 +6,7 @@ that information you can define a resolve property in the profile.
 
 The resolve property looks like:
 
-```JSON
+```
 ...
     "resolve": [
         { "types": ["Relationship", "Related"], "properties": ["source", "target"] },

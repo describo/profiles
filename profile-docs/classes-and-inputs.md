@@ -1,7 +1,7 @@
--   [Classes](#classes)
--   [Inputs](#inputs)
-    -   [ANY Class](#any-class)
-    -   [Note](#note)
+- [Classes](#classes)
+- [Inputs](#inputs)
+  - [ANY Class](#any-class)
+  - [Note](#note)
 
 # Classes
 
@@ -11,7 +11,7 @@ the definition of what can and can't be described to the UI.
 
 The overall structure of a class definition is as follows:
 
-```JSON
+```
 "classes": {
     "Dataset": {
         "definition": "override",
@@ -49,6 +49,8 @@ Each input in the `inputs` array for a class has the following structure:
     "help": "The name of this dataset",
     "required": true,
     "multiple": false,
+    "hide": "false",
+    "readonly": "false",
     "type": ["Text"]
 },
 ```
@@ -61,6 +63,10 @@ Each input in the `inputs` array for a class has the following structure:
 -   `required`: Whether this property is required to have a value and be defined.
 -   `multiple`: true || false. Whether the value for this property is a singleton or an array of
     values.
+-   `hide`: true || false (default: false). Whether the property should not be shown.
+-   `readonly`: true || false (default: false). Whether the property should not be shown but made
+    readonly.
+-   `group`: If a layout is defined, this defines the group to which the property is added.
 -   `type`: An array of data types or entities that can be the value for this input.
 
 Properties can link to entities:
@@ -98,7 +104,7 @@ groups of entities.
 
 Example:
 
-```JSON
+```
 {
     ...
     "name": "relationship",

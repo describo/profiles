@@ -15,7 +15,7 @@ From the
 
 Following is a stripped down example of the structure of an RO-Crate file with the RO Crate context:
 
-```JSON
+```
 {
     @context: "https://w3id.org/ro/crate/1.1/context",
     @graph: [
@@ -29,7 +29,7 @@ following examples:
 
 -   An array with the RO Crate context.
 
-```JSON
+```
 {
     @context: [
         "https://w3id.org/ro/crate/1.1/context"
@@ -44,7 +44,7 @@ An array with the RO Crate context and Friend of a Friend (FOAF) and Dublin Core
 example we are adding in the additional ontologies and namespacing them. We'll see how to use this
 further on.
 
-```JSON
+```
 {
     @context: [
         "https://w3id.org/ro/crate/1.1/context",
@@ -80,7 +80,7 @@ the profile itself. Then, in your input definitions you can do:
 
 -   Using FOAF and DC Terms (abbreviated for clarity)
 
-```JSON
+```
 {
     ...,
     classes: {

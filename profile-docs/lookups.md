@@ -1,4 +1,4 @@
--   [Lookups](#lookups)
+- [Lookups](#lookups)
 
 # Lookups
 
