@@ -1,11 +1,11 @@
--   [Text](#text)
--   [TextArea](#textarea)
--   [Number](#number)
--   [Date, DateTime, Time](#date-datetime-time)
--   [Geo](#geo)
--   [URL](#url)
--   [Select, SelectURL, SelectObject](#select-selecturl-selectobject)
--   [Value](#value)
+- [Text](#text)
+- [TextArea](#textarea)
+- [Number](#number)
+- [Date, DateTime, Time](#date-datetime-time)
+- [Geo](#geo)
+- [URL](#url)
+- [Select, SelectURL, SelectObject](#select-selecturl-selectobject)
+- [Value](#value)
 
 The types property tells Describo what type of data can be provided for a property. It can be an
 array of classes like `["Person", "Organisation"]` or simple data types like
@@ -18,7 +18,7 @@ The simple data types you can define for a type are as follows:
 
 -   `Text`: a simple text box
 
-```JSON
+```
 {
     "id": "https://schema.org/name",
     "name": "name",
@@ -31,7 +31,7 @@ The simple data types you can define for a type are as follows:
 
 -   `TextArea`: a simple text area box
 
-```JSON
+```
 {
     "id": "https://schema.org/name",
     "name": "name",
@@ -44,7 +44,7 @@ The simple data types you can define for a type are as follows:
 
 -   `Number`: A number input
 
-```JSON
+```
 {
     "id": "https://schema.org/name",
     "name": "name",
@@ -59,7 +59,7 @@ The simple data types you can define for a type are as follows:
 -   `DateTime`: A date time input
 -   `Time`: A time input
 
-```JSON
+```
 {
     "id": "https://schema.org/name",
     "name": "name",
@@ -72,7 +72,7 @@ The simple data types you can define for a type are as follows:
 
 -   `Geo`: A geo selection input; allows selecting an area or a single point
 
-```JSON
+```
 {
     "id": "https://schema.org/name",
     "name": "name",
@@ -85,7 +85,7 @@ The simple data types you can define for a type are as follows:
 
 -   `URL`: Allows the user to input a URL
 
-```JSON
+```
 {
     "id": "https://schema.org/name",
     "name": "name",
@@ -107,7 +107,7 @@ are: 'http', 'https', 'ftp', 'ftps', 'arcp'.
 
 -   `Select`: A control where the user can select from a number of predefined options:
 
-```JSON
+```
 {
     ...
     "type": ["Select"],
@@ -121,7 +121,7 @@ are: 'http', 'https', 'ftp', 'ftps', 'arcp'.
 -   `SelectURL`: A control where the user can select from a number of predefined URLs and get back a
     URL object:
 
-```JSON
+```
 {
     ...
     "type": ["SelectURL"],
@@ -134,7 +134,7 @@ are: 'http', 'https', 'ftp', 'ftps', 'arcp'.
 -   `SelectObject`: A control where the user can select from a number of complete objects defined in
     the profile:
 
-```JSON
+```
 {
     ...
     "type": ["SelectObject"],
@@ -147,11 +147,16 @@ are: 'http', 'https', 'ftp', 'ftps', 'arcp'.
 
 returns the selected object as defined and links it into the graph.
 
+**If you need to define objects in your profile as pre-created bits of configuration to inject, then
+you are likely better off creating a datapack and just wiring up lookups from the Describo component
+to the service hosting the pack. We recommend elastic search as it's easy to run and manage, and
+Describo will emit an elastic query for you to send to the server**
+
 ## Value
 
 -   `Value`: A control where a specified value is set for a property
 
-```JSON
+```
 {
     ...
     "type": "Value",

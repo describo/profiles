@@ -7,7 +7,6 @@ that information you can define a resolve property in the profile.
 The resolve property looks like:
 
 ```
-...
     "resolve": [
         { "types": ["Relationship", "Related"], "properties": ["source", "target"] },
         {
@@ -15,7 +14,6 @@ The resolve property looks like:
             "properties": ["object", "participant", "agent"]
         }
     ],
-...
 ```
 
 In this example we have two configurations:

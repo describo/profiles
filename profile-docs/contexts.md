@@ -59,7 +59,7 @@ further on.
 
 -   As above but with some custom definitions as well:
 
-```JSON
+```
 {
     @context: [
         "https://w3id.org/ro/crate/1.1/context",
@@ -82,7 +82,6 @@ the profile itself. Then, in your input definitions you can do:
 
 ```
 {
-    ...,
     classes: {
         Dataset: {
             ...,
