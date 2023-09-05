@@ -19,33 +19,21 @@
         "context": {
             "anyOf": [{ "type": "array" }, { "type": "string" }, { "type": "object" }]
         },
-        "hide": {
-            "description": "Properties to be hidden in the UI",
-            "type": "object",
-            "patternProperties": {
-                "^[A-Z,a-z]*": {
-                    "type": "array",
-                    "items": { "type": "string" }
-                }
-            }
-        },
         "layouts": {
             "description": "Layout definitions for property groups",
-            "type": "object",
-            "patternProperties": {
-                "^[A-Z,a-z]*": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "name": { "type": "string" },
-                            "description": { "type": "string" },
-                            "label": { "type": "string" },
-                            "inputs": { "type": "array", "items": { "type": "string" } }
-                        },
-                        "required": ["name", "inputs", "description"],
-                        "additionalProperties": false
-                    }
+            "type": "array",
+            "items": {
+                "type": "object"
+            }
+        },
+        "resolve": {
+            "description": "Configuration to resolve property associations",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "types": { "type": "array" },
+                    "properties": { "type": "array" }
                 }
             }
         },
@@ -71,6 +59,9 @@
                                     "label": { "type": "string" },
                                     "multiple": { "type": "boolean" },
                                     "required": { "type": "boolean" },
+                                    "hide": { "type": "boolean" },
+                                    "readonly": { "type": "boolean" },
+                                    "group": { "type": "string" },
                                     "type": {
                                         "anyOf": [
                                             { "type": "array", "items": { "type": "string" } },
