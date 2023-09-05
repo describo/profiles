@@ -49,7 +49,8 @@
                     "help": "Attach a language",
                     "type": ["Language"],
                     "required": true,
-                    "multiple": true
+                    "multiple": true,
+                    "group": "about"
                 },
                 {
                     "id": "http://purl.org/dc/terms/conformsTo",

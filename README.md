@@ -62,7 +62,7 @@ things for you) and then just copy that profile into the editor when you wish to
 ## Domain Specific profiles
 
 Example profiles from specific domains can be seen in the
-[domain-profiles folder.](./domain-profiles/). If you'd like to publish your own profile for others
+[domain-profiles folder](./domain-profiles/). If you'd like to publish your own profile for others
 to work with or use please submit a pull request to this repository. You must:
 
 -   create a folder preferably named by your domain in the `domain-profiles` folder.
