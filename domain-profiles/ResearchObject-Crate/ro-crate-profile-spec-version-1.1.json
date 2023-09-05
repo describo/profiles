@@ -6,15 +6,18 @@
         "warnMissingProperty": true,
         "keywords": ["RO Crate", "Spec Version 1.1"]
     },
-    "layouts": {
-        "Dataset": [
-            {
+    "layouts": [
+        {
+            "appliesTo": ["Dataset"],
+            "about": {
                 "name": "About",
-                "description": "",
-                "inputs": ["description", "datePublished", "license", "publisher"]
+                "description": ""
+            },
+            "overflow": {
+                "label": "Other"
             }
-        ]
-    },
+        }
+    ],
     "classes": {
         "Dataset": {
             "definition": "inherit",
@@ -27,16 +30,8 @@
                     "help": "A description of the item.",
                     "required": true,
                     "multiple": true,
-                    "type": ["TextArea"]
-                },
-                {
-                    "id": "https://schema.org/datePublished",
-                    "name": "datePublished",
-                    "label": "Date Published",
-                    "help": "Date of first broadcast/publication.",
-                    "required": true,
-                    "multiple": false,
-                    "type": ["Date", "DateTime"]
+                    "type": ["TextArea"],
+                    "group": "about"
                 },
                 {
                     "id": "https://schema.org/license",
@@ -45,15 +40,28 @@
                     "help": "A license document that applies to this content, typically indicated by URL.",
                     "required": true,
                     "multiple": false,
-                    "type": ["CreativeWork", "URL"]
+                    "type": ["CreativeWork", "URL"],
+                    "group": "about"
                 },
+                {
+                    "id": "https://schema.org/datePublished",
+                    "name": "datePublished",
+                    "label": "Date Published",
+                    "help": "Date of first broadcast/publication.",
+                    "required": true,
+                    "multiple": false,
+                    "type": ["Date", "DateTime"],
+                    "group": "about"
+                },
+
                 {
                     "id": "https://schema.org/publisher",
                     "name": "publisher",
                     "label": "Publisher",
                     "help": "The publisher of the creative work.",
                     "multiple": true,
-                    "type": ["Person", "Organization"]
+                    "type": ["Person", "Organization"],
+                    "group": "about"
                 }
             ]
         },

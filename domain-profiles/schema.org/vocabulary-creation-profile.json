@@ -15,22 +15,6 @@
             "subClassOf": [],
             "inputs": [
                 {
-                    "id": "http://schema.org/mentions",
-                    "name": "mentions",
-                    "help": "The Classes, Properties etc",
-                    "type": ["rdfs:Class", "rdf:Property", "definedTerm", "definedTermSet"],
-                    "multiple": true
-                },
-                {
-                    "id": "https://schema.org/name",
-                    "name": "name",
-                    "label": "Name",
-                    "help": "The name of this ontology",
-                    "required": true,
-                    "multiple": false,
-                    "type": ["Text"]
-                },
-                {
                     "id": "http://schema.org/author",
                     "name": "author",
                     "help": "The person or organization responsible for creating this collection of data",
@@ -50,6 +34,13 @@
                     "help": "An abstract of the collection. Include as much detail as possible about the motivation and use of the collection, including things that we do not yet have properties for",
                     "type": ["TextArea"],
                     "multiple": false
+                },
+                {
+                    "id": "http://schema.org/mentions",
+                    "name": "mentions",
+                    "help": "The Classes, Properties etc",
+                    "type": ["rdfs:Class", "rdf:Property", "definedTerm", "definedTermSet"],
+                    "multiple": true
                 }
             ]
         },
@@ -239,72 +230,7 @@
         "Person": {
             "definition": "override",
             "subClassOf": [],
-            "inputs": [
-                {
-                    "id": "https://schema.org/name",
-                    "name": "name",
-                    "label": "name",
-                    "help": "The name the person",
-                    "required": true,
-                    "multiple": false,
-                    "type": ["Text"]
-                },
-                {
-                    "id": "http://schema.org/description",
-                    "name": "description",
-                    "help": "Add any additional info not covered by other properties here.",
-                    "type": ["TextArea"],
-                    "multiple": false
-                },
-                {
-                    "id": "https://schema.org/affiliation",
-                    "name": "affiliation",
-                    "label": "affiliation",
-                    "help": "The name the person",
-                    "required": false,
-                    "multiple": true,
-                    "type": ["Organization"]
-                }
-            ]
-        },
-        "Organization": {
-            "definition": "override",
-            "subClassOf": [],
-            "inputs": [
-                {
-                    "id": "https://schema.org/name",
-                    "name": "name",
-                    "label": "name",
-                    "help": "The name of the organization",
-                    "required": true,
-                    "multiple": false,
-                    "type": ["Text"]
-                },
-                {
-                    "id": "http://schema.org/description",
-                    "name": "description",
-                    "help": "An abstract of the collection. Include as much detail as possible about the motivation and use of the collection, including things that we do not yet have properties for",
-                    "type": ["TextArea"],
-                    "multiple": false
-                },
-                {
-                    "id": "http://schema.org/location",
-                    "name": "location",
-                    "help": "A location for the organization (eg a city for a publisher)",
-                    "type": ["Text"],
-                    "multiple": false
-                }
-            ]
+            "inputs": []
         }
-    },
-    "enabledClasses": [
-        "Dataset",
-        "Person",
-        "Organization",
-        "Book",
-        "ScholarlyArticle",
-        "RepositoryCollection",
-        "CreativeWork",
-        "CollectionProtocol"
-    ]
+    }
 }
