@@ -14,23 +14,26 @@ The structure of the layouts section is as follows:
     "layouts": [
         {
             "appliesTo": ["Dataset"],
-            "about": { "label": "About", "description": "" },
-            "source": { "label": "Original Source Information", "description": "" },
-            "who": { "label": "Who", "description": "" },
+            "about": { "label": "About", "description": "", order: 0 },
+            "source": { "label": "Original Source Information", "description": "", order: 1 },
+            "who": { "label": "Who", "description": "", order: 2 },
             "permissions": {
                 "label": "Permissions",
-                "description": ""
+                "description": "",
+                order: 3
             },
             "overflow": {
-                "label": "Other"
+                "label": "Other",
+                order: 4
             }
         },
         {
             "appliesTo": ["Language"],
-            "about": { "label": "About", "description": "" },
-            "source": { "label": "More information", "description": "" },
+            "about": { "label": "About", "description": "", order: 0 },
+            "source": { "label": "More information", "description": "", order: 1 },
             "overflow": {
-                "label": "Other"
+                "label": "Other",
+                order: 2
             }
         }
     ],
@@ -49,6 +52,8 @@ In the example above we have two layouts.
    permissions and overflow); each has a label and could have a description.
 2. The second layout applies to entities of type Language. It has 3 groups (about, source and
    overflows); each has a label and could also have a description.
+
+In each layout you should define an `order` so that the tabs are organised in the order you want.
 
 ## Layout selection for entities
 
