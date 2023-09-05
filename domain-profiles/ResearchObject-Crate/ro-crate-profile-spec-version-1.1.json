@@ -10,7 +10,7 @@
         {
             "appliesTo": ["Dataset"],
             "about": {
-                "name": "About",
+                "label": "About",
                 "description": ""
             },
             "overflow": {

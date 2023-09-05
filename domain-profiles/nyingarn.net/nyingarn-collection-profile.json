@@ -13,23 +13,23 @@
         {
             "appliesTo": ["Dataset"],
             "about": {
-                "name": "About",
+                "label": "About",
                 "description": ""
             },
             "source": {
-                "name": "Original Source Information",
+                "label": "Original Source Information",
                 "description": ""
             },
             "permissions": {
-                "name": "Permissions",
+                "label": "Permissions",
                 "description": ""
             },
             "who": {
-                "name": "Who",
+                "label": "Who",
                 "description": ""
             },
             "location": {
-                "name": "Location",
+                "label": "Location",
                 "description": ""
             },
             "overflow": {

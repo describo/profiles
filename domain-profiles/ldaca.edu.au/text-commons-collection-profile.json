@@ -13,28 +13,24 @@
         {
             "appliesTo": ["Dataset"],
             "about": {
-                "name": "Main",
+                "label": "Main",
                 "description": ""
             },
             "related": {
-                "name": "Related items",
-                "description": "",
-                "inputs": ["publisher", "funder", "citation"]
+                "label": "Related items",
+                "description": ""
             },
             "structure": {
-                "name": "Collection Structure",
-                "description": "How does this collection relate to other collections",
-                "inputs": ["hasMember"]
+                "label": "Collection Structure",
+                "description": "How does this collection relate to other collections"
             },
             "spatiotemporal": {
-                "name": "Space and Time",
-                "description": "",
-                "inputs": ["temporalCoverage", "spatialCoverage"]
+                "label": "Space and Time",
+                "description": ""
             },
             "parts": {
-                "name": "Parts",
-                "description": "Files associated to this collection",
-                "inputs": ["hasPart"]
+                "label": "Parts",
+                "description": "Files associated to this collection"
             },
             "overflow": {
                 "label": "Other"
