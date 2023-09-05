@@ -12,17 +12,12 @@ The structure of a profile is as follows:
 
 ```JSON
 {
-    "metadata": {
-    },
-    "context": {
-    },
+    "metadata":  {},
+    "context": {},
+    "layouts": {},
     "resolve": [],
-    "layouts": {
-    },
-    "classes": {
-    },
-    "lookup": {
-    }
+    "classes": {},
+    "lookup": {},
 }
 ```
 
