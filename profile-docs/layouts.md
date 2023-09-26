@@ -1,6 +1,6 @@
-- [Layouts](#layouts)
-  - [Layout selection for entities](#layout-selection-for-entities)
-  - [Assigning properties to layout groups](#assigning-properties-to-layout-groups)
+-   [Layouts](#layouts)
+    -   [Layout selection for entities](#layout-selection-for-entities)
+    -   [Assigning properties to layout groups](#assigning-properties-to-layout-groups)
 
 **This documentation is valid for the crate-builder-component from v0.40.0.**
 
@@ -41,7 +41,7 @@ The structure of the layouts section is as follows:
 
 Layouts is an array of objects.
 
-The keys (properties) cna be anything you want but some keys are special:
+The keys (properties) can be anything you want but some keys are special:
 `appliesTo, about and overflow`. About is the tab where the entity `@id`, `@type` and `name` will be
 shown. AppliesTo defines which entities this layout should be applied to. And overflow is where
 properties in the data that are not defined in the profile will be shown.
@@ -51,9 +51,9 @@ In the example above we have two layouts.
 1. The first layout applies to entities of type Dataset. It has 5 groups (about, source, who,
    permissions and overflow); each has a label and could have a description.
 2. The second layout applies to entities of type Language. It has 3 groups (about, source and
-   overflows); each has a label and could also have a description.
+   overflow); each has a label and could also have a description.
 
-In each layout you should define an `order` so that the tabs are organised in the order you want.
+In each layout you must define an `order` so that the tabs are organised in the order you want.
 
 ## Layout selection for entities
 
@@ -96,4 +96,4 @@ classes: {
 ```
 
 In this example, both properties would be shown in the `about` tab and their order would be as
-defined in the profile.
+defined in the profile; that is, A would be shown before B.

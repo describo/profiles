@@ -1,14 +1,14 @@
-- [Classes](#classes)
-- [Inputs](#inputs)
-  - [name property](#name-property)
-  - [input definitions](#input-definitions)
-- [ANY Class](#any-class)
+-   [Classes](#classes)
+-   [Inputs](#inputs)
+    -   [name property](#name-property)
+    -   [input definitions](#input-definitions)
+-   [ANY Class](#any-class)
 
 # Classes
 
-This section contains class definitions a user can use in their dataset description. The section is
-an object and the keys are the `@type`. It provides the definition of what can and can't be
-described to the UI.
+This section contains class definitions users can use in their descriptions. The section is an
+object and the keys are the `@type`. It provides the definition of what can and can't be described
+to the UI.
 
 The overall structure of a class definition is as follows:
 
@@ -44,6 +44,7 @@ Each class definition has three properties that are all required:
     configuration from schema.org.
 
 -   `subClassOf`: An array of classes that this class is a subclass of.
+
 -   `inputs`: An array of objects that define the properties the user can define for this class. All
     of these properties will be rendered in the UI as placeholders. That will give you a UI that
     looks like a traditional form with entries for all of the things the user can define.
@@ -76,7 +77,7 @@ Each input in the `inputs` array for a class has the following structure:
     value.
 -   `multiple`: true || false. Whether the value for this property is a singleton or an array of
     values.
--   `hide`: true || false (default: false). Whether the property should not be shown.
+-   `hide`: true || false (default: false). Whether the property should be hidden.
 -   `readonly`: true || false (default: false). Whether the property should be shown but made
     readonly.
 -   `group`: If a layout is defined, this defines the group to which the property is added.
@@ -110,7 +111,7 @@ define it in the profile. Indeed, it will not be used.
 ## input definitions
 
 Any inputs defined in the profile will automatically be rendered to the screen. This is true whether
-the definition is is set to 'override' or 'inherit'. So, if you want a set of properties rendered by
+the definition is set to 'override' or 'inherit'. So, if you want a set of properties rendered by
 default (ie show a row for each property as a guide to the user) then define those properties in the
 inputs of the relevant type.
 

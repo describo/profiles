@@ -48,7 +48,7 @@ further on.
 {
     @context: [
         "https://w3id.org/ro/crate/1.1/context",
-        { "foaf": "http://xmlns.com/foaf/0.1/#term_family_name" },
+        { "foaf": "http://xmlns.com/foaf/0.1" },
         { "dcterms": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" }
     ],
     @graph: [
@@ -63,7 +63,7 @@ further on.
 {
     @context: [
         "https://w3id.org/ro/crate/1.1/context",
-        { "foaf": "http://xmlns.com/foaf/0.1/#term_family_name" },
+        { "foaf": "http://xmlns.com/foaf/0.1" },
         { "dcterms": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" }
         {
             somePropertyInYourDomain: "https://your domain/path/to/definition#somePropertyInYourDomain"
@@ -104,3 +104,25 @@ the profile itself. Then, in your input definitions you can do:
 Then, when Describo emits the user created crate, it will come with a context that describes the
 data accurately because all of the things the user can do with your profile, match the context you
 provide.
+
+To define a context for your profile in the crate add a top level key `context`:
+
+```
+{
+    "metadata": {
+        "name": "A profile with all primitives and groups",
+        "description": "A profile with entries for each of the supported datatypes",
+        "version": 0.1,
+        "warnMissingProperty": true
+    },
+    "context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        { "foaf": "http://xmlns.com/foaf/0.1" },
+        { "dcterms": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" }
+        {
+            somePropertyInYourDomain: "https://your domain/path/to/definition#somePropertyInYourDomain"
+        }
+    ],
+    ...
+}
+```
