@@ -1,12 +1,13 @@
 # Profile Structure
 
-- [Profile Structure](#profile-structure)
-  - [Metadata](#metadata)
-  - [Context](#context)
-  - [Resolve](#resolve)
-  - [Layouts](#layouts)
-  - [Classes](#classes)
-  - [Lookup](#lookup)
+-   [Profile Structure](#profile-structure)
+    -   [Metadata](#metadata)
+    -   [Context](#context)
+-   [Localisation](#localisation)
+    -   [Resolve](#resolve)
+    -   [Layouts](#layouts)
+    -   [Classes](#classes)
+    -   [Lookup](#lookup)
 
 The structure of a profile is as follows:
 
@@ -14,6 +15,7 @@ The structure of a profile is as follows:
 {
     "metadata":  {},
     "context": {},
+    "localisation": {},
     "layouts": {},
     "resolve": [],
     "classes": {},
@@ -40,6 +42,13 @@ highly recommended that you provide a context that suits the profile you have cr
 then disable the context editor and emit crates with this context in it.
 
 See [All about contexts](./contexts.md) for more information.
+
+# Localisation
+
+The localisation sections allows you to translate classes (e.g. Author) and primitives (e.g. Text,
+Date etc) into your own language.
+
+See [All about localisation](./localisation.md) for more information.
 
 ## Resolve
 
