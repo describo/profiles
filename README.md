@@ -6,4 +6,4 @@ application you can use to validate your profile. And there are example profiles
 as well.
 
 Comprehensive documentation is available @
-[https://describo.github.io/documentation](https://describo.github.io/documentation)
+[https://describo.github.io/documentation/profiles/get-started.html](https://describo.github.io/documentation/profiles/get-started.html)
