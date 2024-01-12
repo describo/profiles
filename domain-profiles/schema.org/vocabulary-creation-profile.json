@@ -2,18 +2,27 @@
     "metadata": {
         "name": "Schema profile",
         "description": "Describo profile for creating Schema.org style vocabularies",
-        "version": 0.1
+        "version": 0.2
     },
-    "rootDatasets": {
-        "Schema": {
-            "type": "Dataset"
-        }
+    "context": {
+        "pcdm": "http://pcdm.org/models#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "bio": "https://bioschemas.org/"
     },
     "classes": {
         "Dataset": {
             "definition": "override",
             "subClassOf": [],
             "inputs": [
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "help": "An abstract of the collection. Include as much detail as possible about the motivation and use of the collection, including things that we do not yet have properties for",
+                    "type": ["TextArea"],
+                    "multiple": false
+                },
                 {
                     "id": "http://schema.org/author",
                     "name": "author",
@@ -28,13 +37,7 @@
                     "type": ["Organization"],
                     "multiple": true
                 },
-                {
-                    "id": "http://schema.org/description",
-                    "name": "description",
-                    "help": "An abstract of the collection. Include as much detail as possible about the motivation and use of the collection, including things that we do not yet have properties for",
-                    "type": ["TextArea"],
-                    "multiple": false
-                },
+
                 {
                     "id": "http://schema.org/mentions",
                     "name": "mentions",
@@ -200,7 +203,7 @@
                 {
                     "id": "http://schema.org/domainIncludes",
                     "name": "domainIncludes",
-                    "help": "What clasess use this property (ie what domain does this property occur in)",
+                    "help": "What classes use this property (ie what domain does this property occur in)",
                     "type": ["Class"],
                     "multiple": true
                 },
@@ -214,7 +217,7 @@
                 {
                     "id": "range",
                     "name": "http://schema.org/rangeIncludes",
-                    "help": "What clasess are expected values for this range",
+                    "help": "What classes are expected values for this range",
                     "type": ["Class", "DefinedTerm"],
                     "multiple": false
                 },
@@ -226,11 +229,6 @@
                     "multiple": false
                 }
             ]
-        },
-        "Person": {
-            "definition": "override",
-            "subClassOf": [],
-            "inputs": []
         }
     }
 }
