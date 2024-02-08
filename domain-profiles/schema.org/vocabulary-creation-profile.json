@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Schema profile",
         "description": "Describo profile for creating Schema.org style vocabularies",
-        "version": 0.2
+        "version": 0.3
     },
     "context": {
         "pcdm": "http://pcdm.org/models#",
@@ -219,7 +219,7 @@
                     "name": "http://schema.org/rangeIncludes",
                     "help": "What classes are expected values for this range",
                     "type": ["Class", "DefinedTerm"],
-                    "multiple": false
+                    "multiple": true
                 },
                 {
                     "id": "https://schema.org/sameAs",
