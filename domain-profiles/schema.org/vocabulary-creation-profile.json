@@ -53,8 +53,7 @@
             "inputs": [
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#label",
-                    "name": "rdfs:Label",
-                    "label": "Label",
+                    "name": "rdfs:label",
                     "help": "The label for this class",
                     "required": true,
                     "multiple": false,
@@ -62,7 +61,7 @@
                 },
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#comment",
-                    "name": "rdfs:Comment",
+                    "name": "rdfs:comment",
                     "help": "A description of the Class",
                     "type": ["TextArea"],
                     "multiple": false
@@ -90,7 +89,6 @@
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#label",
                     "name": "rdfs:label",
-                    "label": "Label",
                     "help": "The label for this property",
                     "required": true,
                     "multiple": false,
@@ -98,7 +96,7 @@
                 },
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#comment",
-                    "name": "rdfs:Comment",
+                    "name": "rdfs:comment",
                     "help": "A description of the Class",
                     "type": ["TextArea"],
                     "multiple": false
