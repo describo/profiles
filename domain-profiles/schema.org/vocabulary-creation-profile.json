@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Schema profile",
         "description": "Describo profile for creating Schema.org style vocabularies",
-        "version": 0.3
+        "version": 0.4
     },
     "context": {
         "pcdm": "http://pcdm.org/models#",
@@ -52,17 +52,8 @@
             "subClassOf": [],
             "inputs": [
                 {
-                    "id": "https://schema.org/name",
-                    "name": "name",
-                    "label": "Name",
-                    "help": "The name of this Class",
-                    "required": true,
-                    "multiple": false,
-                    "type": ["Text"]
-                },
-                {
                     "id": "http://www.w3.org/2000/01/rdf-schema#label",
-                    "name": "label",
+                    "name": "rdfs:Label",
                     "label": "Label",
                     "help": "The label for this class",
                     "required": true,
@@ -71,7 +62,7 @@
                 },
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#comment",
-                    "name": "Comment",
+                    "name": "rdfs:Comment",
                     "help": "A description of the Class",
                     "type": ["TextArea"],
                     "multiple": false
@@ -80,8 +71,65 @@
                     "id": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
                     "name": "rdfs:subClassOf",
                     "help": "Parent Class (if any)",
-                    "type": ["Class"],
+                    "type": ["rdfs:Class"],
                     "multiple": false
+                },
+                {
+                    "id": "https://schema.org/sameAs",
+                    "name": "sameAs",
+                    "help": "URL of an equivalent term",
+                    "type": ["URL"],
+                    "multiple": false
+                }
+            ]
+        },
+        "rdf:Property": {
+            "definition": "override",
+            "subClassOf": [],
+            "inputs": [
+                {
+                    "id": "http://www.w3.org/2000/01/rdf-schema#label",
+                    "name": "rdfs:label",
+                    "label": "Label",
+                    "help": "The label for this property",
+                    "required": true,
+                    "multiple": false,
+                    "type": ["Text"]
+                },
+                {
+                    "id": "http://www.w3.org/2000/01/rdf-schema#comment",
+                    "name": "rdfs:Comment",
+                    "help": "A description of the Class",
+                    "type": ["TextArea"],
+                    "multiple": false
+                },
+                {
+                    "id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
+                    "name": "rdfs:subPropertyOf",
+                    "help": "Is this a sub-type of a more general property",
+                    "type": ["rdfs:Class"],
+                    "multiple": false
+                },
+                {
+                    "id": "http://schema.org/domainIncludes",
+                    "name": "domainIncludes",
+                    "help": "What classes use this property (ie what domain does this property occur in)",
+                    "type": ["rdfs:Class"],
+                    "multiple": true
+                },
+                {
+                    "id": "https://schema.org/definedTermSet",
+                    "name": "definedTermSet",
+                    "help": "A set of defined terms that can be used for the range of values of this property",
+                    "type": ["DefinedTermSet"],
+                    "multiple": false
+                },
+                {
+                    "id": "range",
+                    "name": "http://schema.org/rangeIncludes",
+                    "help": "What classes are expected values for this range",
+                    "type": ["rdfs:Class", "DefinedTerm"],
+                    "multiple": true
                 },
                 {
                     "id": "https://schema.org/sameAs",
@@ -96,15 +144,6 @@
             "definition": "override",
             "subClassOf": [],
             "inputs": [
-                {
-                    "id": "https://schema.org/name",
-                    "name": "name",
-                    "label": "Name",
-                    "help": "The name of this DefinedTerm",
-                    "required": true,
-                    "multiple": false,
-                    "type": ["Text"]
-                },
                 {
                     "id": "https://schema.org/description",
                     "name": "description",
@@ -133,15 +172,6 @@
             "subClassOf": [],
             "inputs": [
                 {
-                    "id": "https://schema.org/name",
-                    "name": "name",
-                    "label": "Name",
-                    "help": "The name of this DefinedTermSet",
-                    "required": true,
-                    "multiple": false,
-                    "type": ["Text"]
-                },
-                {
                     "id": "https://schema.org/description",
                     "name": "description",
                     "help": "A description of the defined set of defined terms",
@@ -153,72 +183,6 @@
                     "name": "hasDefinedTerm",
                     "help": "A set of defined terms that can be used for the range of values of a property",
                     "type": ["DefinedTerm"],
-                    "multiple": true
-                },
-                {
-                    "id": "https://schema.org/sameAs",
-                    "name": "sameAs",
-                    "help": "URL of an equivalent term",
-                    "type": ["URL"],
-                    "multiple": false
-                }
-            ]
-        },
-        "rdf:Property": {
-            "definition": "override",
-            "subClassOf": [],
-            "inputs": [
-                {
-                    "id": "https://schema.org/name",
-                    "name": "name",
-                    "label": "Name",
-                    "help": "The name of this Class",
-                    "required": true,
-                    "multiple": false,
-                    "type": ["Text"]
-                },
-                {
-                    "id": "http://www.w3.org/2000/01/rdf-schema#label",
-                    "name": "label",
-                    "label": "Label",
-                    "help": "The label for this property",
-                    "required": true,
-                    "multiple": false,
-                    "type": ["Text"]
-                },
-                {
-                    "id": "http://www.w3.org/2000/01/rdf-schema#comment",
-                    "name": "Comment",
-                    "help": "A description of the Class",
-                    "type": ["TextArea"],
-                    "multiple": false
-                },
-                {
-                    "id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
-                    "name": "subPropertyOf",
-                    "help": "Is this a sub-type of a more general property",
-                    "type": ["Class"],
-                    "multiple": false
-                },
-                {
-                    "id": "http://schema.org/domainIncludes",
-                    "name": "domainIncludes",
-                    "help": "What classes use this property (ie what domain does this property occur in)",
-                    "type": ["Class"],
-                    "multiple": true
-                },
-                {
-                    "id": "https://schema.org/definedTermSet",
-                    "name": "definedTermSet",
-                    "help": "A set of defined terms that can be used for the range of values of this property",
-                    "type": ["DefinedTermSet"],
-                    "multiple": false
-                },
-                {
-                    "id": "range",
-                    "name": "http://schema.org/rangeIncludes",
-                    "help": "What classes are expected values for this range",
-                    "type": ["Class", "DefinedTerm"],
                     "multiple": true
                 },
                 {
