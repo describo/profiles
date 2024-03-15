@@ -682,7 +682,7 @@
                     "name": "deathDate",
                     "multiple": false,
                     "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
-                    "type": ["Date"],
+                    "type": ["Date", "Text"],
                     "group": "about"
                 },
                 {
@@ -726,7 +726,7 @@
                     "name": "deathDate",
                     "multiple": false,
                     "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
-                    "type": ["Date"],
+                    "type": ["Date", "Text"],
                     "group": "about"
                 },
                 {
@@ -770,7 +770,7 @@
                     "name": "deathDate",
                     "multiple": false,
                     "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
-                    "type": ["Date"],
+                    "type": ["Date", "Text"],
                     "group": "about"
                 },
                 {
