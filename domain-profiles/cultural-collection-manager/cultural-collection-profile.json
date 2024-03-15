@@ -1,0 +1,822 @@
+{
+    "metadata": {
+        "name": "Cultural Collection Manager Profile",
+        "description": "A profile for use in creating cultural collections.",
+        "version": 0.1,
+        "warnMissingProperty": true
+    },
+    "layouts": [
+        {
+            "appliesTo": ["File"],
+            "about": {
+                "label": "About",
+                "description": ""
+            },
+            "who": {
+                "label": "Who",
+                "description": "The roles of the described entities."
+            },
+            "metadata": {
+                "label": "Metadata",
+                "description": "Metadata about the file."
+            },
+            "overflow": {
+                "label": "Other"
+            }
+        },
+        {
+            "appliesTo": ["Dataset"],
+            "about": {
+                "label": "About",
+                "description": ""
+            },
+            "content": {
+                "label": "Content",
+                "description": "The data files that have been described."
+            },
+            "source": {
+                "label": "Original Source Information",
+                "description": "Information about the source of the content."
+            },
+            "who": {
+                "label": "Who",
+                "description": "The roles of the described entities."
+            },
+            "location": {
+                "label": "Location",
+                "description": "Location information pertaining to this content."
+            },
+            "overflow": {
+                "label": "Other"
+            }
+        },
+        {
+            "appliesTo": ["Person", "Relationship", "DirectionalRelationship"],
+            "about": {
+                "label": "About",
+                "description": ""
+            },
+            "overflow": {
+                "label": "Other"
+            }
+        }
+    ],
+    "resolve": [
+        {
+            "types": ["Relationship"],
+            "properties": ["object", "agent", "participants"]
+        },
+        {
+            "types": ["DirectionalRelationship"],
+            "properties": ["source", "target"]
+        }
+    ],
+    "classes": {
+        "File": {
+            "definition": "inherit",
+            "subClassOf": [],
+            "inputs": [
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "help": "Free notes",
+                    "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about"
+                },
+
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#annotator",
+                    "name": "annotator",
+                    "help": "The participant produced an annotation of this or a related resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#author",
+                    "name": "author",
+                    "help": "The participant contributed original writings to the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#compiler",
+                    "name": "compiler",
+                    "help": "The participant is responsible for collecting the sub-parts of the resource together.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#consultant",
+                    "name": "consultant",
+                    "help": "The participant contributes expertise to the creation of a work.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#data_inputter",
+                    "name": "data_inputter",
+                    "help": "The participant was responsible for entering, re-typing, and/or structuring the data contained in the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#depositor",
+                    "name": "depositor",
+                    "help": "The participant was responsible for depositing the resource in an archive.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#developer",
+                    "name": "developer",
+                    "help": "The participant developed the methodology or tools that constitute the resource, or that were used to create the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#editor",
+                    "name": "editor",
+                    "help": "The participant reviewed, corrected, and/or tested the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#illustrator",
+                    "name": "illustrator",
+                    "help": "The participant contributed drawings or other illustrations to the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#interpreter",
+                    "name": "interpreter",
+                    "help": "The participant translates in real-time or explains the discourse recorded in the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#interviewer",
+                    "name": "interviewer",
+                    "help": "The participant conducted an interview that forms part of the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#participant",
+                    "name": "participant",
+                    "help": "The participant was present during the creation of the resource, but did not contribute substantially to its content.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#performer",
+                    "name": "performer",
+                    "help": "The participant performed some portion of a recorded, filmed, or transcribed resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#photographer",
+                    "name": "photographer",
+                    "help": "The participant took the photograph, or shot the film, that appears in or constitutes the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#recorder",
+                    "name": "recorder",
+                    "help": "The participant operated the recording machinery used to create the resource.",
+                    "group": "who",
+                    "bundlePropertyAs": "contributor",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#register",
+                    "name": "register",
+                    "help": "Specifies the type of register (any of the varieties of a language that a speaker uses in a particular social context [Merriam-Webster]) of the contents of a language resource\n",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#research_participant",
+                    "name": "research_participant",
+                    "help": "The participant acted as a research subject or responded to a questionnaire, the results of which study form the basis of the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#researcher",
+                    "name": "researcher",
+                    "help": "The resource was created as part of the participant’s research, or the research presents interim or final results from the participant’s research.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#responder",
+                    "name": "responder",
+                    "help": "The participant was an interlocutor in some sort of discourse event.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#signer",
+                    "name": "signer",
+                    "help": "The participant was a principal signer in a resource that consists of a recording, a film, or a transcription of a recorded resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#singer",
+                    "name": "singer",
+                    "help": "The participant sang, either individually or as part of a group, in a resource that consists of a recording, a film, or a transcription of a recorded resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#speaker",
+                    "name": "speaker",
+                    "help": "The participant was a principal speaker in a resource that consists of a recording, a film, or a transcription of a recorded resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#sponsor",
+                    "name": "sponsor",
+                    "help": "The participant contributed financial support to the creation of the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#transcriber",
+                    "name": "transcriber",
+                    "help": "The participant produced a transcription of this or a related resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#translator",
+                    "name": "translator",
+                    "help": "The participant produced a translation of this or a related resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+
+                {
+                    "id": "http://schema.org/contentSize",
+                    "name": "contentSize",
+                    "multiple": false,
+                    "type": ["Text"],
+                    "group": "metadata"
+                },
+                {
+                    "id": "http://schema.org/encodingFormat",
+                    "name": "encodingFormat",
+                    "multiple": true,
+                    "type": ["Text", "URL"],
+                    "group": "metadata"
+                },
+                {
+                    "id": "http://schema.org/sha256",
+                    "name": "sha256",
+                    "multiple": false,
+                    "type": ["Text"],
+                    "group": "metadata"
+                }
+            ]
+        },
+        "Dataset": {
+            "definition": "inherit",
+            "subClassOf": [],
+            "inputs": [
+                {
+                    "id": "https://schema.org/licence",
+                    "name": "licence",
+                    "help": "The licence that applies to this data",
+                    "multiple": true,
+                    "type": ["CreativeWork"],
+                    "group": "about"
+                },
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "help": "Free notes",
+                    "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/author",
+                    "name": "author",
+                    "help": "The author of this work",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://describo.cloud/cultural-collection-manager/people",
+                    "name": "people",
+                    "help": "People that form part of this collection",
+                    "multiple": true,
+                    "type": ["Person"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://describo.cloud/cultural-collection-manager/organizations",
+                    "name": "organizations",
+                    "help": "Organizations that form part of this collection",
+                    "multiple": true,
+                    "type": ["Organization"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://describo.cloud/cultural-collection-manager/places",
+                    "name": "places",
+                    "help": "Places that form part of this collection",
+                    "multiple": true,
+                    "type": ["Place"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://describo.cloud/cultural-collection-manager/events",
+                    "name": "events",
+                    "help": "Events that form part of this collection",
+                    "multiple": true,
+                    "type": ["Event"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://describo.cloud/cultural-collection-manager/relationships",
+                    "name": "relationships",
+                    "help": "Relationships that form part of this collection",
+                    "multiple": true,
+                    "type": ["Relationship", "DirectionalRelationship"],
+                    "group": "about"
+                },
+
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#annotator",
+                    "name": "annotator",
+                    "help": "The participant produced an annotation of this or a related resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#author",
+                    "name": "author",
+                    "help": "The participant contributed original writings to the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#compiler",
+                    "name": "compiler",
+                    "help": "The participant is responsible for collecting the sub-parts of the resource together.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#consultant",
+                    "name": "consultant",
+                    "help": "The participant contributes expertise to the creation of a work.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#data_inputter",
+                    "name": "data_inputter",
+                    "help": "The participant was responsible for entering, re-typing, and/or structuring the data contained in the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#depositor",
+                    "name": "depositor",
+                    "help": "The participant was responsible for depositing the resource in an archive.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#developer",
+                    "name": "developer",
+                    "help": "The participant developed the methodology or tools that constitute the resource, or that were used to create the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#editor",
+                    "name": "editor",
+                    "help": "The participant reviewed, corrected, and/or tested the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#illustrator",
+                    "name": "illustrator",
+                    "help": "The participant contributed drawings or other illustrations to the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#interpreter",
+                    "name": "interpreter",
+                    "help": "The participant translates in real-time or explains the discourse recorded in the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#interviewer",
+                    "name": "interviewer",
+                    "help": "The participant conducted an interview that forms part of the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#participant",
+                    "name": "participant",
+                    "help": "The participant was present during the creation of the resource, but did not contribute substantially to its content.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#performer",
+                    "name": "performer",
+                    "help": "The participant performed some portion of a recorded, filmed, or transcribed resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#photographer",
+                    "name": "photographer",
+                    "help": "The participant took the photograph, or shot the film, that appears in or constitutes the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#recorder",
+                    "name": "recorder",
+                    "help": "The participant operated the recording machinery used to create the resource.",
+                    "group": "who",
+                    "bundlePropertyAs": "contributor",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#register",
+                    "name": "register",
+                    "help": "Specifies the type of register (any of the varieties of a language that a speaker uses in a particular social context [Merriam-Webster]) of the contents of a language resource\n",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#research_participant",
+                    "name": "research_participant",
+                    "help": "The participant acted as a research subject or responded to a questionnaire, the results of which study form the basis of the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#researcher",
+                    "name": "researcher",
+                    "help": "The resource was created as part of the participant’s research, or the research presents interim or final results from the participant’s research.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#responder",
+                    "name": "responder",
+                    "help": "The participant was an interlocutor in some sort of discourse event.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#signer",
+                    "name": "signer",
+                    "help": "The participant was a principal signer in a resource that consists of a recording, a film, or a transcription of a recorded resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#singer",
+                    "name": "singer",
+                    "help": "The participant sang, either individually or as part of a group, in a resource that consists of a recording, a film, or a transcription of a recorded resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#speaker",
+                    "name": "speaker",
+                    "help": "The participant was a principal speaker in a resource that consists of a recording, a film, or a transcription of a recorded resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#sponsor",
+                    "name": "sponsor",
+                    "help": "The participant contributed financial support to the creation of the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#transcriber",
+                    "name": "transcriber",
+                    "help": "The participant produced a transcription of this or a related resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#translator",
+                    "name": "translator",
+                    "help": "The participant produced a translation of this or a related resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+
+                {
+                    "id": "http://schema.org/holdingInstitution",
+                    "name": "holdingInstitution",
+                    "help": "Holding Institution",
+                    "type": ["Organization"],
+                    "group": "source"
+                },
+                {
+                    "id": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/rightsHolder",
+                    "name": "rightsHolder",
+                    "help": "Rights holder",
+                    "type": ["Person", "Organization", "Text"],
+                    "group": "source"
+                },
+                {
+                    "id": "http://schema.org/contentLanguage",
+                    "name": "contentLanguage",
+                    "label": "Content Language",
+                    "help": "The language(s) that are the subject of the document. (e.g. Swedish)",
+                    "multiple": true,
+                    "type": ["Language"],
+                    "group": "source"
+                },
+                {
+                    "id": "http://schema.org/subjectLanguage",
+                    "name": "subjectLanguage",
+                    "label": "Subject Language",
+                    "help": "The other language(s) used in the document (e.g. English).",
+                    "multiple": true,
+                    "type": ["Language"],
+                    "group": "source"
+                },
+
+                {
+                    "id": "http://nyingarn.net/metadata/originalForm",
+                    "name": "originalForm",
+                    "help": "Original in typed of handwritten form",
+                    "type": ["Select"],
+                    "values": ["Hand", "Type", "Both"],
+                    "multiple": true,
+                    "group": "source"
+                },
+                {
+                    "id": "http://schema.org/about",
+                    "name": "subject",
+                    "help": "Subject Pathways thesaurus subject",
+                    "type": ["Text"],
+                    "multiple": true,
+                    "group": "source"
+                },
+
+                {
+                    "id": "http://schema.org/contentLocation",
+                    "name": "location",
+                    "help": "Location [min/max lat/long]. Given by bounding box on map.",
+                    "type": ["Geo"],
+                    "group": "location"
+                },
+
+                {
+                    "id": "http://schema.org/hasPart",
+                    "name": "hasPart",
+                    "label": "Contents",
+                    "type": ["Dataset", "File"],
+                    "group": "content"
+                }
+            ]
+        },
+        "Person": {
+            "definition": "inherit",
+            "subClassOf": [],
+            "inputs": [
+                {
+                    "id": "https://schema.org/givenName",
+                    "name": "givenName",
+                    "multiple": true,
+                    "type": ["Text"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/familyName",
+                    "name": "familyName",
+                    "multiple": true,
+                    "type": ["Text"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/birthDate",
+                    "name": "birthDate",
+                    "multiple": false,
+                    "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
+                    "type": ["Date", "Text"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/deathDate",
+                    "name": "deathDate",
+                    "multiple": false,
+                    "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
+                    "type": ["Date"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/birthPlace",
+                    "name": "birthPlace",
+                    "multiple": false,
+                    "type": ["Place"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/deathPlace",
+                    "name": "deathPlace",
+                    "multiple": false,
+                    "type": ["Place"],
+                    "group": "about"
+                }
+            ]
+        },
+        "DirectionalRelationship": {
+            "definition": "override",
+            "subClassOf": ["Thing"],
+            "inputs": [
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "help": "Free notes",
+                    "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/startDate",
+                    "name": "birthDate",
+                    "multiple": false,
+                    "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
+                    "type": ["Date", "Text"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/endDate",
+                    "name": "deathDate",
+                    "multiple": false,
+                    "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
+                    "type": ["Date"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://describo.cloud/cultural-collection-manager/source",
+                    "name": "source",
+                    "multiple": false,
+                    "type": ["ANY"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://describo.cloud/cultural-collection-manager/target",
+                    "name": "target",
+                    "multiple": false,
+                    "type": ["ANY"],
+                    "group": "about"
+                }
+            ]
+        },
+        "Relationship": {
+            "definition": "override",
+            "subClassOf": ["Thing"],
+            "inputs": [
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "help": "Free notes",
+                    "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/startDate",
+                    "name": "birthDate",
+                    "multiple": false,
+                    "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
+                    "type": ["Date", "Text"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/endDate",
+                    "name": "deathDate",
+                    "multiple": false,
+                    "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
+                    "type": ["Date"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/object",
+                    "name": "object",
+                    "multiple": false,
+                    "type": ["ANY"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/agent",
+                    "name": "agent",
+                    "multiple": false,
+                    "type": ["ANY"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/participant",
+                    "name": "participant",
+                    "multiple": false,
+                    "type": ["ANY"],
+                    "group": "about"
+                }
+            ]
+        },
+        "Language": {
+            "definition": "override",
+            "subClassOf": [],
+            "inputs": []
+        }
+    },
+    "lookup": {
+        "Language": {
+            "fields": [
+                "@id",
+                "name",
+                "alternateName",
+                "iso639-3",
+                "austlangCode",
+                "glottologCode",
+                "languageCode"
+            ],
+            "datapacks": [
+                "https://raw.githubusercontent.com/describo/data-packs/master/data-packs/languages/glottolog-language-data-pack.json",
+                "https://raw.githubusercontent.com/describo/data-packs/master/data-packs/languages/austlang-language-data-pack.json"
+            ]
+        }
+    }
+}
