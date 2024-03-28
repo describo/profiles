@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Cultural Collection Manager Profile",
         "description": "A profile for use in creating cultural collections.",
-        "version": "0.3.1",
+        "version": "0.3.2",
         "warnMissingProperty": true
     },
     "layouts": [
@@ -343,6 +343,14 @@
                     "group": "about"
                 },
                 {
+                    "id": "https://schema.org/author",
+                    "name": "author",
+                    "help": "The author of this work",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "about"
+                },
+                {
                     "id": "http://schema.org/description",
                     "name": "description",
                     "help": "Free notes",
@@ -356,22 +364,6 @@
                     "help": "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.",
                     "type": ["DefinedTerm", "URL", "Text"],
                     "multiple": true,
-                    "group": "about"
-                },
-                {
-                    "id": "http://schema.org/mentions",
-                    "name": "mentions",
-                    "help": "Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.",
-                    "type": ["ANY"],
-                    "multiple": true,
-                    "group": "about"
-                },
-                {
-                    "id": "https://schema.org/author",
-                    "name": "author",
-                    "help": "The author of this work",
-                    "multiple": true,
-                    "type": ["Person", "Organization"],
                     "group": "about"
                 },
                 {
