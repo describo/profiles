@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Cultural Collection Manager Profile",
         "description": "A profile for use in creating cultural collections.",
-        "version": 0.3,
+        "version": "0.3.1",
         "warnMissingProperty": true
     },
     "layouts": [
@@ -35,7 +35,7 @@
                 "description": "Entities that form part of this dataset"
             },
             "content": {
-                "label": "Content",
+                "label": "Data Files",
                 "description": "The data files that have been described."
             },
             "source": {
