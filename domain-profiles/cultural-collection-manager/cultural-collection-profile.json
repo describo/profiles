@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Cultural Collection Manager Profile",
         "description": "A profile for use in creating cultural collections.",
-        "version": 0.2,
+        "version": 0.3,
         "warnMissingProperty": true
     },
     "layouts": [
@@ -29,6 +29,10 @@
             "about": {
                 "label": "About",
                 "description": ""
+            },
+            "entities": {
+                "label": "Entities",
+                "description": "Entities that form part of this dataset"
             },
             "content": {
                 "label": "Content",
@@ -376,7 +380,7 @@
                     "help": "People that form part of this collection",
                     "multiple": true,
                     "type": ["Person"],
-                    "group": "about"
+                    "group": "entities"
                 },
                 {
                     "id": "https://describo.cloud/cultural-collection-manager/organizations",
@@ -384,7 +388,7 @@
                     "help": "Organizations that form part of this collection",
                     "multiple": true,
                     "type": ["Organization"],
-                    "group": "about"
+                    "group": "entities"
                 },
                 {
                     "id": "https://describo.cloud/cultural-collection-manager/places",
@@ -392,7 +396,7 @@
                     "help": "Places that form part of this collection",
                     "multiple": true,
                     "type": ["Place"],
-                    "group": "about"
+                    "group": "entities"
                 },
                 {
                     "id": "https://describo.cloud/cultural-collection-manager/events",
@@ -400,7 +404,7 @@
                     "help": "Events that form part of this collection",
                     "multiple": true,
                     "type": ["Event"],
-                    "group": "about"
+                    "group": "entities"
                 },
                 {
                     "id": "https://describo.cloud/cultural-collection-manager/relationships",
@@ -408,7 +412,7 @@
                     "help": "Relationships that form part of this collection",
                     "multiple": true,
                     "type": ["Relationship", "DirectionalRelationship"],
-                    "group": "about"
+                    "group": "entities"
                 },
 
                 {
