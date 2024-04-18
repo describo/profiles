@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Cultural Collection Manager Profile",
         "description": "A profile for use in creating cultural collections.",
-        "version": "0.5",
+        "version": "0.6",
         "warnMissingProperty": true
     },
     "layouts": [
@@ -46,18 +46,28 @@
                 "label": "Who",
                 "description": "The roles of the described entities."
             },
-            "location": {
-                "label": "Location",
-                "description": "Location information pertaining to this content."
+            "overflow": {
+                "label": "Other"
+            }
+        },
+        {
+            "appliesTo": ["Person", "Organization", "Place", "Event"],
+            "about": {
+                "label": "About",
+                "description": ""
             },
             "overflow": {
                 "label": "Other"
             }
         },
         {
-            "appliesTo": ["Person", "Relationship"],
+            "appliesTo": ["Relationship"],
             "about": {
                 "label": "About",
+                "description": ""
+            },
+            "entities": {
+                "label": "Entities",
                 "description": ""
             },
             "overflow": {
@@ -86,11 +96,7 @@
     "resolve": [
         {
             "types": ["Relationship"],
-            "properties": ["object", "agent", "participants"]
-        },
-        {
-            "types": ["DirectionalRelationship"],
-            "properties": ["source", "target"]
+            "properties": ["object", "agent", "participants", "source", "target"]
         }
     ],
     "classes": {
@@ -391,6 +397,12 @@
                     "group": "about"
                 },
                 {
+                    "id": "http://schema.org/contentLocation",
+                    "name": "location",
+                    "type": ["Place"],
+                    "group": "about"
+                },
+                {
                     "id": "https://describo.cloud/cultural-collection-manager/people",
                     "name": "people",
                     "help": "People that form part of this collection",
@@ -483,14 +495,6 @@
                 },
 
                 {
-                    "id": "http://schema.org/contentLocation",
-                    "name": "location",
-                    "help": "Location [min/max lat/long]. Given by bounding box on map.",
-                    "type": ["Geo"],
-                    "group": "location"
-                },
-
-                {
                     "id": "http://schema.org/hasPart",
                     "name": "hasPart",
                     "label": "Contents",
@@ -552,17 +556,122 @@
         "Organization": {
             "definition": "inherit",
             "subClassOf": [],
-            "inputs": []
+            "inputs": [
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/foundingDate",
+                    "name": "foundingDate",
+                    "multiple": false,
+                    "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
+                    "type": ["Date", "Text"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/dissolutionDate",
+                    "name": "dissolutionDate",
+                    "multiple": false,
+                    "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
+                    "type": ["Date", "Text"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/location",
+                    "name": "location",
+                    "multiple": false,
+                    "type": ["Place"],
+                    "group": "about"
+                }
+            ]
         },
         "Place": {
             "definition": "inherit",
             "subClassOf": [],
-            "inputs": []
+            "inputs": [
+                {
+                    "id": "http://schema.org/alternateName",
+                    "name": "alternateName",
+                    "type": ["Text"],
+                    "multiple": true,
+                    "group": "about"
+                },
+                {
+                    "id": "http://schema.org/address",
+                    "name": "address",
+                    "type": ["TextArea"],
+                    "multiple": false,
+                    "group": "about"
+                },
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/geo",
+                    "name": "geo",
+                    "label": "Location",
+                    "multiple": true,
+                    "type": ["Geo"],
+                    "group": "about"
+                }
+            ]
         },
         "Event": {
             "definition": "inherit",
             "subClassOf": [],
-            "inputs": []
+            "inputs": [
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/startDate",
+                    "name": "startDate",
+                    "multiple": false,
+                    "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
+                    "type": ["Date", "Text"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/endDate",
+                    "name": "endDate",
+                    "multiple": false,
+                    "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
+                    "type": ["Date", "Text"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/location",
+                    "name": "location",
+                    "multiple": false,
+                    "type": ["Place", "VirtualLocation", "Text"],
+                    "group": "about"
+                }
+            ]
+        },
+        "VirtualLocation": {
+            "definition": "inherit",
+            "subClassOf": [],
+            "inputs": [
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about"
+                }
+            ]
         },
         "Relationship": {
             "definition": "override",
@@ -578,7 +687,7 @@
                 },
                 {
                     "id": "https://schema.org/startDate",
-                    "name": "birthDate",
+                    "name": "startDate",
                     "multiple": false,
                     "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
                     "type": ["Date", "Text"],
@@ -586,10 +695,17 @@
                 },
                 {
                     "id": "https://schema.org/endDate",
-                    "name": "deathDate",
+                    "name": "endDate",
                     "multiple": false,
                     "dateFormat": ["YYYY-MM-DD", "YYYY-MM", "YYYY"],
                     "type": ["Date", "Text"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/location",
+                    "name": "location",
+                    "multiple": false,
+                    "type": ["Place"],
                     "group": "about"
                 },
                 {
@@ -598,7 +714,7 @@
                     "help": "The objects of this relationship. Used to define an undirected relationship between the described members.",
                     "multiple": false,
                     "type": ["ANY"],
-                    "group": "about"
+                    "group": "entities"
                 },
                 {
                     "id": "https://schema.org/agent",
@@ -606,7 +722,7 @@
                     "help": "The agents of this relationship. Used to define an undirected relationship between the described members.",
                     "multiple": false,
                     "type": ["ANY"],
-                    "group": "about"
+                    "group": "entities"
                 },
                 {
                     "id": "https://schema.org/participant",
@@ -614,7 +730,7 @@
                     "help": "The participants of this relationship. Used to define an undirected relationship between the described members.",
                     "multiple": false,
                     "type": ["ANY"],
-                    "group": "about"
+                    "group": "entities"
                 },
                 {
                     "id": "https://describo.cloud/cultural-collection-manager/source",
@@ -622,7 +738,7 @@
                     "help": "The source of this relationship. Used to define a directional relationship.",
                     "multiple": false,
                     "type": ["ANY"],
-                    "group": "about"
+                    "group": "entities"
                 },
                 {
                     "id": "https://describo.cloud/cultural-collection-manager/target",
@@ -630,7 +746,7 @@
                     "help": "The target of this relationship. Used to define a directional relationship.",
                     "multiple": false,
                     "type": ["ANY"],
-                    "group": "about"
+                    "group": "entities"
                 }
             ]
         },
