@@ -2,20 +2,49 @@
     "metadata": {
         "name": "Schema profile",
         "description": "Describo profile for creating Schema.org style vocabularies",
-        "version": 0.4
+        "version": 0.5
     },
     "context": {
-        "pcdm": "http://pcdm.org/models#",
-        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "schema": "http://schema.org/",
-        "bio": "https://bioschemas.org/"
+        "pcdm": "https://pcdm.org/models#",
+        "rdf": "https://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "https://www.w3.org/2000/01/rdf-schema#",
+        "schema": "https://schema.org",
+        "bio": "https://bioschemas.org"
     },
+    "layouts": [
+        {
+            "appliesTo": ["Dataset"],
+            "about": {
+                "label": "About",
+                "description": "",
+                "order": 0,
+                "properties": [
+                    "licence",
+                    "description",
+                    "author",
+                    "contributor",
+                    "publisher",
+                    "mentions"
+                ]
+            },
+            "overflow": {
+                "label": "Other",
+                "order": 4
+            }
+        }
+    ],
     "classes": {
         "Dataset": {
             "definition": "override",
             "subClassOf": [],
             "inputs": [
+                {
+                    "id": "http://schema.org/license",
+                    "name": "licence",
+                    "help": "A license document that applies to this content, typically indicated by URL.",
+                    "type": ["URL", "CreativeWork"],
+                    "multiple": false
+                },
                 {
                     "id": "http://schema.org/description",
                     "name": "description",
@@ -31,6 +60,13 @@
                     "multiple": true
                 },
                 {
+                    "id": "http://schema.org/contributor",
+                    "name": "contributor",
+                    "help": "A secondary contributor to the CreativeWork or Event.",
+                    "type": ["Person", "Organization"],
+                    "multiple": true
+                },
+                {
                     "id": "http://schema.org/publisher",
                     "name": "publisher",
                     "help": "The organization responsible for releasing this collection of data",
@@ -42,7 +78,7 @@
                     "id": "http://schema.org/mentions",
                     "name": "mentions",
                     "help": "The Classes, Properties etc",
-                    "type": ["rdfs:Class", "rdf:Property", "definedTerm", "definedTermSet"],
+                    "type": ["rdfs:Class", "rdf:Property", "definedTerm"],
                     "multiple": true
                 }
             ]
@@ -54,6 +90,7 @@
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#label",
                     "name": "rdfs:label",
+                    "label": "label",
                     "help": "The label for this class",
                     "required": true,
                     "multiple": false,
@@ -62,23 +99,27 @@
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#comment",
                     "name": "rdfs:comment",
+                    "label": "comment",
                     "help": "A description of the Class",
-                    "type": ["TextArea"],
-                    "multiple": false
+                    "required": true,
+                    "multiple": false,
+                    "type": ["TextArea"]
                 },
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
                     "name": "rdfs:subClassOf",
+                    "label": "subClassOf",
                     "help": "Parent Class (if any)",
-                    "type": ["rdfs:Class"],
-                    "multiple": false
+                    "required": true,
+                    "multiple": false,
+                    "type": ["rdfs:Class"]
                 },
                 {
                     "id": "https://schema.org/sameAs",
-                    "name": "sameAs",
+                    "name": "schema:sameAs",
                     "help": "URL of an equivalent term",
-                    "type": ["URL"],
-                    "multiple": false
+                    "multiple": false,
+                    "type": ["URL"]
                 }
             ]
         },
@@ -89,6 +130,7 @@
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#label",
                     "name": "rdfs:label",
+                    "label": "label",
                     "help": "The label for this property",
                     "required": true,
                     "multiple": false,
@@ -97,41 +139,41 @@
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#comment",
                     "name": "rdfs:comment",
-                    "help": "A description of the Class",
-                    "type": ["TextArea"],
-                    "multiple": false
+                    "label": "comment",
+                    "help": "A description of the Property",
+                    "required": true,
+                    "multiple": false,
+                    "type": ["TextArea"]
                 },
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
                     "name": "rdfs:subPropertyOf",
+                    "label": "subPropertyOf",
                     "help": "Is this a sub-type of a more general property",
-                    "type": ["rdfs:Class"],
-                    "multiple": false
+                    "multiple": false,
+                    "type": ["rdfs:Class"]
                 },
                 {
                     "id": "http://schema.org/domainIncludes",
-                    "name": "domainIncludes",
+                    "name": "schema:domainIncludes",
+                    "label": "domainIncludes",
                     "help": "What classes use this property (ie what domain does this property occur in)",
-                    "type": ["rdfs:Class"],
-                    "multiple": true
+                    "required": true,
+                    "multiple": true,
+                    "type": ["rdfs:Class"]
                 },
                 {
-                    "id": "https://schema.org/definedTermSet",
-                    "name": "definedTermSet",
-                    "help": "A set of defined terms that can be used for the range of values of this property",
-                    "type": ["DefinedTermSet"],
-                    "multiple": false
-                },
-                {
-                    "id": "range",
-                    "name": "http://schema.org/rangeIncludes",
+                    "id": "http://schema.org/rangeIncludes",
+                    "name": "schema:rangeIncludes",
+                    "label": "rangeIncludes",
                     "help": "What classes are expected values for this range",
-                    "type": ["rdfs:Class", "DefinedTerm"],
-                    "multiple": true
+                    "required": true,
+                    "multiple": true,
+                    "type": ["rdfs:Class", "DefinedTerm"]
                 },
                 {
                     "id": "https://schema.org/sameAs",
-                    "name": "sameAs",
+                    "name": "schema:sameAs",
                     "help": "URL of an equivalent term",
                     "type": ["URL"],
                     "multiple": false
@@ -144,48 +186,14 @@
             "inputs": [
                 {
                     "id": "https://schema.org/description",
-                    "name": "description",
+                    "name": "schema:description",
                     "help": "A description of the defined Term",
                     "type": ["TextArea"],
                     "multiple": false
                 },
                 {
-                    "id": "https://schema.org/inDefinedTermSet",
-                    "name": "inDefinedTermSet",
-                    "help": "A set of defined terms that can be used for the range of values of a property",
-                    "type": ["DefinedTermSet"],
-                    "multiple": false
-                },
-                {
                     "id": "https://schema.org/sameAs",
-                    "name": "sameAs",
-                    "help": "URL of an equivalent term",
-                    "type": ["URL"],
-                    "multiple": false
-                }
-            ]
-        },
-        "DefinedTermSet": {
-            "definition": "override",
-            "subClassOf": [],
-            "inputs": [
-                {
-                    "id": "https://schema.org/description",
-                    "name": "description",
-                    "help": "A description of the defined set of defined terms",
-                    "type": ["TextArea"],
-                    "multiple": false
-                },
-                {
-                    "id": "https://schema.org/hasDefinedTerm",
-                    "name": "hasDefinedTerm",
-                    "help": "A set of defined terms that can be used for the range of values of a property",
-                    "type": ["DefinedTerm"],
-                    "multiple": true
-                },
-                {
-                    "id": "https://schema.org/sameAs",
-                    "name": "sameAs",
+                    "name": "schema:sameAs",
                     "help": "URL of an equivalent term",
                     "type": ["URL"],
                     "multiple": false
