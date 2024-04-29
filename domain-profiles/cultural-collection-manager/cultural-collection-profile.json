@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Cultural Collection Manager Profile",
         "description": "A profile for use in creating cultural collections.",
-        "version": "0.6",
+        "version": "0.7",
         "warnMissingProperty": true
     },
     "layouts": [
@@ -137,6 +137,30 @@
                     "group": "who"
                 },
                 {
+                    "id": "https://schema.org/contributor",
+                    "name": "contributor",
+                    "help": "A secondary contributor to the CreativeWork or Event.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://schema.org/copyrightHolder",
+                    "name": "copyrightHolder",
+                    "help": "The party holding the legal copyright to the CreativeWork.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://schema.org/creator",
+                    "name": "creator",
+                    "help": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
                     "id": "https://w3id.org/ro/terms/text-commons#data_inputter",
                     "name": "data_inputter",
                     "help": "The participant was responsible for entering, re-typing, and/or structuring the data contained in the resource.",
@@ -164,6 +188,14 @@
                     "id": "https://w3id.org/ro/terms/text-commons#editor",
                     "name": "editor",
                     "help": "The participant reviewed, corrected, and/or tested the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://schema.org/funder",
+                    "name": "funder",
+                    "help": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
                     "multiple": true,
                     "type": ["Person", "Organization"],
                     "group": "who"
@@ -212,6 +244,22 @@
                     "id": "https://w3id.org/ro/terms/text-commons#photographer",
                     "name": "photographer",
                     "help": "The participant took the photograph, or shot the film, that appears in or constitutes the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://schema.org/producer",
+                    "name": "producer",
+                    "help": "The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://schema.org/publisher",
+                    "name": "publisher",
+                    "help": "The publisher of the creative work.",
                     "multiple": true,
                     "type": ["Person", "Organization"],
                     "group": "who"
