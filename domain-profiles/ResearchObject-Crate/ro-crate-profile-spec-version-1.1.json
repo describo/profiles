@@ -2,13 +2,67 @@
     "metadata": {
         "name": "Research Object Crate Profile - Spec Version",
         "description": "A profile satisfying the requirements of the RO Crate Spec version 1.1",
-        "version": 1.1,
+        "version": 1.2,
         "warnMissingProperty": true,
         "keywords": ["RO Crate", "Spec Version 1.1"]
     },
     "layouts": [
         {
+            "appliesTo": ["File"],
+            "about": {
+                "label": "About",
+                "description": ""
+            },
+            "who": {
+                "label": "Who",
+                "description": "The roles of the described entities."
+            },
+            "metadata": {
+                "label": "Metadata",
+                "description": "Metadata about the file."
+            },
+            "overflow": {
+                "label": "Other"
+            }
+        },
+        {
+            "appliesTo": ["CreativeWork"],
+            "about": {
+                "label": "About",
+                "description": ""
+            },
+            "who": {
+                "label": "Who",
+                "description": "The roles of the people involved."
+            },
+            "overflow": {
+                "label": "Other"
+            }
+        },
+        {
             "appliesTo": ["Dataset"],
+            "about": {
+                "label": "About",
+                "description": ""
+            },
+            "content": {
+                "label": "Data Files",
+                "description": "The data files that have been described."
+            },
+            "source": {
+                "label": "Original Source Information",
+                "description": "Information about the source of the content."
+            },
+            "who": {
+                "label": "Who",
+                "description": "The roles of the people involved."
+            },
+            "overflow": {
+                "label": "Other"
+            }
+        },
+        {
+            "appliesTo": ["Person", "Organization", "Place", "Event"],
             "about": {
                 "label": "About",
                 "description": ""
@@ -19,29 +73,307 @@
         }
     ],
     "classes": {
-        "Dataset": {
+        "CreativeWork": {
             "definition": "inherit",
             "subClassOf": [],
             "inputs": [
                 {
-                    "id": "https://schema.org/description",
-                    "name": "description",
-                    "label": "Description",
-                    "help": "A description of the item.",
-                    "required": true,
+                    "id": "https://w3id.org/ro/terms/text-commons#annotator",
+                    "name": "annotator",
+                    "help": "The participant produced an annotation of this or a related resource.",
                     "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#author",
+                    "name": "author",
+                    "help": "The participant contributed original writings to the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#compiler",
+                    "name": "compiler",
+                    "help": "The participant is responsible for collecting the sub-parts of the resource together.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#consultant",
+                    "name": "consultant",
+                    "help": "The participant contributes expertise to the creation of a work.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://schema.org/contributor",
+                    "name": "contributor",
+                    "help": "A secondary contributor to the CreativeWork or Event.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://schema.org/copyrightHolder",
+                    "name": "copyrightHolder",
+                    "help": "The party holding the legal copyright to the CreativeWork.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://schema.org/creator",
+                    "name": "creator",
+                    "help": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#data_inputter",
+                    "name": "data_inputter",
+                    "help": "The participant was responsible for entering, re-typing, and/or structuring the data contained in the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#depositor",
+                    "name": "depositor",
+                    "help": "The participant was responsible for depositing the resource in an archive.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#developer",
+                    "name": "developer",
+                    "help": "The participant developed the methodology or tools that constitute the resource, or that were used to create the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#editor",
+                    "name": "editor",
+                    "help": "The participant reviewed, corrected, and/or tested the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://schema.org/funder",
+                    "name": "funder",
+                    "help": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#illustrator",
+                    "name": "illustrator",
+                    "help": "The participant contributed drawings or other illustrations to the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#interpreter",
+                    "name": "interpreter",
+                    "help": "The participant translates in real-time or explains the discourse recorded in the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#interviewer",
+                    "name": "interviewer",
+                    "help": "The participant conducted an interview that forms part of the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#participant",
+                    "name": "participant",
+                    "help": "The participant was present during the creation of the resource, but did not contribute substantially to its content.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#performer",
+                    "name": "performer",
+                    "help": "The participant performed some portion of a recorded, filmed, or transcribed resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#photographer",
+                    "name": "photographer",
+                    "help": "The participant took the photograph, or shot the film, that appears in or constitutes the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://schema.org/producer",
+                    "name": "producer",
+                    "help": "The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://schema.org/publisher",
+                    "name": "publisher",
+                    "help": "The publisher of the creative work.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#recorder",
+                    "name": "recorder",
+                    "help": "The participant operated the recording machinery used to create the resource.",
+                    "group": "who",
+                    "bundlePropertyAs": "contributor",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#register",
+                    "name": "register",
+                    "help": "Specifies the type of register (any of the varieties of a language that a speaker uses in a particular social context [Merriam-Webster]) of the contents of a language resource\n",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#research_participant",
+                    "name": "research_participant",
+                    "help": "The participant acted as a research subject or responded to a questionnaire, the results of which study form the basis of the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#researcher",
+                    "name": "researcher",
+                    "help": "The resource was created as part of the participant’s research, or the research presents interim or final results from the participant’s research.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#responder",
+                    "name": "responder",
+                    "help": "The participant was an interlocutor in some sort of discourse event.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#signer",
+                    "name": "signer",
+                    "help": "The participant was a principal signer in a resource that consists of a recording, a film, or a transcription of a recorded resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#singer",
+                    "name": "singer",
+                    "help": "The participant sang, either individually or as part of a group, in a resource that consists of a recording, a film, or a transcription of a recorded resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#speaker",
+                    "name": "speaker",
+                    "help": "The participant was a principal speaker in a resource that consists of a recording, a film, or a transcription of a recorded resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#sponsor",
+                    "name": "sponsor",
+                    "help": "The participant contributed financial support to the creation of the resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#transcriber",
+                    "name": "transcriber",
+                    "help": "The participant produced a transcription of this or a related resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                },
+                {
+                    "id": "https://w3id.org/ro/terms/text-commons#translator",
+                    "name": "translator",
+                    "help": "The participant produced a translation of this or a related resource.",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "who"
+                }
+            ]
+        },
+        "Dataset": {
+            "definition": "inherit",
+            "subClassOf": ["CreativeWork"],
+            "inputs": [
+                {
+                    "id": "https://schema.org/licence",
+                    "name": "licence",
+                    "help": "The licence that applies to this data",
+                    "multiple": true,
+                    "type": ["CreativeWork"],
+                    "group": "about",
+                    "required": true
+                },
+                {
+                    "id": "https://schema.org/author",
+                    "name": "author",
+                    "help": "The author of this work",
+                    "multiple": true,
+                    "type": ["Person", "Organization"],
+                    "group": "about",
+                    "required": true
+                },
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "help": "Free notes",
                     "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about",
+                    "required": true
+                },
+                {
+                    "id": "http://schema.org/keywords",
+                    "name": "keywords",
+                    "help": "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.",
+                    "type": ["DefinedTerm", "URL", "Text"],
+                    "multiple": true,
                     "group": "about"
                 },
                 {
-                    "id": "https://schema.org/license",
-                    "name": "license",
-                    "label": "License",
-                    "help": "A license document that applies to this content, typically indicated by URL.",
-                    "required": true,
-                    "multiple": false,
-                    "type": ["CreativeWork", "URL"],
-                    "group": "about"
+                    "id": "http://schema.org/contentLocation",
+                    "name": "location",
+                    "type": ["Place"],
+                    "group": "about",
+                    "required": true
                 },
                 {
                     "id": "https://schema.org/datePublished",
@@ -62,6 +394,109 @@
                     "multiple": true,
                     "type": ["Person", "Organization"],
                     "group": "about"
+                },
+                {
+                    "id": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/rightsHolder",
+                    "name": "rightsHolder",
+                    "help": "Rights holder",
+                    "type": ["Person", "Organization", "Text"],
+                    "group": "source"
+                },
+                {
+                    "id": "http://schema.org/contentLanguage",
+                    "name": "contentLanguage",
+                    "label": "Content Language",
+                    "help": "The language(s) that are the subject of the document. (e.g. Swedish)",
+                    "multiple": true,
+                    "type": ["Language"],
+                    "group": "source"
+                },
+                {
+                    "id": "http://schema.org/subjectLanguage",
+                    "name": "subjectLanguage",
+                    "label": "Subject Language",
+                    "help": "The other language(s) used in the document (e.g. English).",
+                    "multiple": true,
+                    "type": ["Language"],
+                    "group": "source"
+                },
+
+                {
+                    "id": "http://nyingarn.net/metadata/originalForm",
+                    "name": "originalForm",
+                    "help": "Original in typed of handwritten form",
+                    "type": ["Select"],
+                    "values": ["Hand", "Type", "Both"],
+                    "multiple": true,
+                    "group": "source"
+                },
+                {
+                    "id": "http://schema.org/about",
+                    "name": "subject",
+                    "help": "Subject Pathways thesaurus subject",
+                    "type": ["Text"],
+                    "multiple": true,
+                    "group": "source"
+                },
+
+                {
+                    "id": "http://schema.org/hasPart",
+                    "name": "hasPart",
+                    "label": "Contents",
+                    "type": ["Dataset", "File"],
+                    "group": "content"
+                }
+            ]
+        },
+        "File": {
+            "definition": "inherit",
+            "subClassOf": ["CreativeWork"],
+            "inputs": [
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "help": "Free notes",
+                    "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about"
+                },
+                {
+                    "id": "http://schema.org/keywords",
+                    "name": "keywords",
+                    "help": "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.",
+                    "type": ["DefinedTerm", "URL", "Text"],
+                    "multiple": true,
+                    "group": "about"
+                },
+                {
+                    "id": "http://schema.org/mentions",
+                    "name": "mentions",
+                    "help": "Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.",
+                    "type": ["ANY"],
+                    "multiple": true,
+                    "group": "about"
+                },
+
+                {
+                    "id": "http://schema.org/contentSize",
+                    "name": "contentSize",
+                    "multiple": false,
+                    "type": ["Text"],
+                    "group": "metadata"
+                },
+                {
+                    "id": "http://schema.org/encodingFormat",
+                    "name": "encodingFormat",
+                    "multiple": true,
+                    "type": ["Text", "URL"],
+                    "group": "metadata"
+                },
+                {
+                    "id": "http://schema.org/sha256",
+                    "name": "sha256",
+                    "multiple": false,
+                    "type": ["Text"],
+                    "group": "metadata"
                 }
             ]
         },
@@ -70,27 +505,66 @@
             "subClassOf": [],
             "inputs": [
                 {
-                    "id": "https://schema.org/email",
-                    "name": "email",
-                    "help": "An email address.",
+                    "id": "https://schema.org/givenName",
+                    "name": "givenName",
                     "multiple": true,
-                    "type": ["Text"]
+                    "type": ["Text"],
+                    "group": "about"
                 },
                 {
-                    "id": "https://schema.org/affiliation",
-                    "help": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
-                    "name": "affiliation",
+                    "id": "https://schema.org/familyName",
+                    "name": "familyName",
                     "multiple": true,
-                    "type": ["Organization"]
-                },
-                {
-                    "id": "https://schema.org/contactPoint",
-                    "help": "A contact point for a person or organization.",
-                    "name": "contactPoint",
-                    "multiple": true,
-                    "type": ["ContactPoint"]
+                    "type": ["Text"],
+                    "group": "about"
                 }
             ]
+        },
+        "Place": {
+            "definition": "inherit",
+            "subClassOf": [],
+            "inputs": [
+                {
+                    "id": "http://schema.org/alternateName",
+                    "name": "alternateName",
+                    "type": ["Text"],
+                    "multiple": true,
+                    "group": "about"
+                },
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/geo",
+                    "name": "geo",
+                    "label": "Location",
+                    "multiple": true,
+                    "type": ["Geo"],
+                    "group": "about"
+                }
+            ]
+        },
+        "VirtualLocation": {
+            "definition": "inherit",
+            "subClassOf": [],
+            "inputs": [
+                {
+                    "id": "http://schema.org/description",
+                    "name": "description",
+                    "type": ["TextArea"],
+                    "multiple": true,
+                    "group": "about"
+                }
+            ]
+        },
+        "Language": {
+            "definition": "override",
+            "subClassOf": [],
+            "inputs": []
         }
     },
     "lookup": {}
