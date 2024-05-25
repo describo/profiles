@@ -2,8 +2,9 @@
     "metadata": {
         "name": "Cultural Collection Manager Profile",
         "description": "A profile for use in creating cultural collections.",
-        "version": "0.7",
-        "warnMissingProperty": true
+        "version": "0.8",
+        "warnMissingProperty": true,
+        "enableEntityTimestamps": true
     },
     "layouts": [
         {
