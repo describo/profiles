@@ -2,7 +2,7 @@
     "metadata": {
         "name": "eDiscovery",
         "description": "A profile for e-Discovery and note taking",
-        "version": 1.0,
+        "version": "1.0",
         "warnMissingProperty": true,
         "keywords": []
     },
