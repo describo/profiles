@@ -1,8 +1,8 @@
 {
     "metadata": {
-        "name": "Research Object Crate Profile - Spec Version",
+        "name": "Research Object Crate Profile - Spec Version 1.1",
         "description": "A profile satisfying the requirements of the RO Crate Spec version 1.1",
-        "version": 1.2,
+        "version": "Profile v1.3",
         "warnMissingProperty": true,
         "keywords": ["RO Crate", "Spec Version 1.1"]
     },
@@ -385,7 +385,6 @@
                     "type": ["Date", "DateTime"],
                     "group": "about"
                 },
-
                 {
                     "id": "https://schema.org/publisher",
                     "name": "publisher",
@@ -393,6 +392,14 @@
                     "help": "The publisher of the creative work.",
                     "multiple": true,
                     "type": ["Person", "Organization"],
+                    "group": "about"
+                },
+                {
+                    "id": "https://schema.org/mainEntity",
+                    "name": "mainEntity",
+                    "help": "The main Thing that this dataset is about.",
+                    "multiple": true,
+                    "type": ["ANY", "Thing", "URL"],
                     "group": "about"
                 },
                 {
