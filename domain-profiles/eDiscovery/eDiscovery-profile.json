@@ -2,7 +2,7 @@
     "metadata": {
         "name": "eDiscovery",
         "description": "A profile for e-Discovery and note taking",
-        "version": "1.1",
+        "version": "1.2",
         "warnMissingProperty": true,
         "keywords": []
     },
@@ -75,6 +75,15 @@
             "definition": "override",
             "subClassOf": ["CreativeWork"],
             "inputs": [
+                {
+                    "id": "https://schema.org/license",
+                    "name": "license",
+                    "help": "The license that applies to this data",
+                    "multiple": true,
+                    "type": ["CreativeWork"],
+                    "group": "about",
+                    "required": true
+                },
                 {
                     "id": "http://schema.org/description",
                     "name": "description",

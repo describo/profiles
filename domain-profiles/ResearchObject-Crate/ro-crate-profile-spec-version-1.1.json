@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Research Object Crate Profile - Spec Version 1.1",
         "description": "A profile satisfying the requirements of the RO Crate Spec version 1.1",
-        "version": "Profile v1.3",
+        "version": "Profile v1.4",
         "warnMissingProperty": true,
         "keywords": ["RO Crate", "Spec Version 1.1"]
     },
@@ -334,9 +334,9 @@
             "subClassOf": ["CreativeWork"],
             "inputs": [
                 {
-                    "id": "https://schema.org/licence",
-                    "name": "licence",
-                    "help": "The licence that applies to this data",
+                    "id": "https://schema.org/license",
+                    "name": "license",
+                    "help": "The license that applies to this data",
                     "multiple": true,
                     "type": ["CreativeWork"],
                     "group": "about",

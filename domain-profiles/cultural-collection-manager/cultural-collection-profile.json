@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Cultural Collection Manager Profile",
         "description": "A profile for use in creating cultural collections.",
-        "version": "0.8",
+        "version": "0.9",
         "warnMissingProperty": true,
         "enableEntityTimestamps": true
     },
@@ -414,9 +414,9 @@
             "subClassOf": ["CreativeWork"],
             "inputs": [
                 {
-                    "id": "https://schema.org/licence",
-                    "name": "licence",
-                    "help": "The licence that applies to this data",
+                    "id": "https://schema.org/license",
+                    "name": "license",
+                    "help": "The license that applies to this data",
                     "multiple": true,
                     "type": ["CreativeWork"],
                     "group": "about"
