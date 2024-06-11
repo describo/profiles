@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Schema profile",
         "description": "Describo profile for creating Schema.org style vocabularies",
-        "version": 0.6
+        "version": 0.7
     },
     "context": {
         "pcdm": "https://pcdm.org/models#",
@@ -40,7 +40,7 @@
             "inputs": [
                 {
                     "id": "http://schema.org/license",
-                    "name": "licence",
+                    "name": "license",
                     "help": "A license document that applies to this content, typically indicated by URL.",
                     "type": ["URL", "CreativeWork"],
                     "multiple": false
