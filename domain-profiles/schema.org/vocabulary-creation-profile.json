@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Schema profile",
         "description": "Describo profile for creating Schema.org style vocabularies",
-        "version": 0.5
+        "version": 0.6
     },
     "context": {
         "pcdm": "https://pcdm.org/models#",
@@ -80,6 +80,14 @@
                     "help": "The Classes, Properties etc",
                     "type": ["rdfs:Class", "rdf:Property", "definedTerm"],
                     "multiple": true
+                },
+                {
+                    "id": "https://schema.org/mainEntity",
+                    "name": "mainEntity",
+                    "help": "The main Thing that this dataset is about.",
+                    "multiple": true,
+                    "type": ["ANY", "Thing", "URL"],
+                    "group": "about"
                 }
             ]
         },
