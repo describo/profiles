@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Schema profile",
         "description": "Describo profile for creating Schema.org style vocabularies",
-        "version": 0.7
+        "version": 0.8
     },
     "context": {
         "pcdm": "https://pcdm.org/models#",
@@ -18,18 +18,17 @@
                 "label": "About",
                 "description": "",
                 "order": 0,
-                "properties": [
-                    "licence",
-                    "description",
-                    "author",
-                    "contributor",
-                    "publisher",
-                    "mentions"
-                ]
+                "properties": ["license", "description", "author", "contributor", "publisher"]
+            },
+            "definitions": {
+                "label": "Definitions",
+                "description": "",
+                "order": 1,
+                "properties": ["mentions"]
             },
             "overflow": {
                 "label": "Other",
-                "order": 4
+                "order": 2
             }
         }
     ],
