@@ -2,15 +2,19 @@
     "metadata": {
         "name": "Schema profile",
         "description": "Describo profile for creating Schema.org style vocabularies",
-        "version": 0.8
+        "version": "v0.9"
     },
-    "context": {
-        "pcdm": "https://pcdm.org/models#",
-        "rdf": "https://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "rdfs": "https://www.w3.org/2000/01/rdf-schema#",
-        "schema": "https://schema.org",
-        "bio": "https://bioschemas.org"
-    },
+    "context": [
+        "https://w3id.org/ro/crate/1.1/context",
+        "https://describo.github.io/type-definitions/context/1.0/context.jsonld",
+        {
+            "pcdm": "https://pcdm.org/models#",
+            "rdf": "https://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "rdfs": "https://www.w3.org/2000/01/rdf-schema#",
+            "schema": "https://schema.org",
+            "bio": "https://bioschemas.org"
+        }
+    ],
     "layouts": [
         {
             "appliesTo": ["Dataset"],
