@@ -2,7 +2,7 @@
     "metadata": {
         "name": "Schema profile",
         "description": "Describo profile for creating Schema.org style vocabularies",
-        "version": "v0.9"
+        "version": "v1.0"
     },
     "context": [
         "https://w3id.org/ro/crate/1.1/context",
@@ -12,7 +12,10 @@
             "rdf": "https://www.w3.org/1999/02/22-rdf-syntax-ns#",
             "rdfs": "https://www.w3.org/2000/01/rdf-schema#",
             "schema": "https://schema.org",
-            "bio": "https://bioschemas.org"
+            "bio": "https://bioschemas.org",
+            "classes": "_:classes",
+            "properties": "_:properties",
+            "terms": "_:terms"
         }
     ],
     "layouts": [
@@ -28,7 +31,7 @@
                 "label": "Definitions",
                 "description": "",
                 "order": 1,
-                "properties": ["mentions"]
+                "properties": ["classes", "terms"]
             },
             "overflow": {
                 "label": "Other",
@@ -76,12 +79,18 @@
                     "type": ["Organization"],
                     "multiple": true
                 },
-
                 {
-                    "id": "http://schema.org/mentions",
-                    "name": "mentions",
-                    "help": "The Classes, Properties etc",
-                    "type": ["rdfs:Class", "rdf:Property", "definedTerm"],
+                    "id": "_:classes",
+                    "name": "classes",
+                    "help": "Class definitions.",
+                    "type": ["rdfs:Class"],
+                    "multiple": true
+                },
+                {
+                    "id": "_:terms",
+                    "name": "terms",
+                    "help": "Defined Term definitions.",
+                    "type": ["definedTerm"],
                     "multiple": true
                 },
                 {
@@ -126,6 +135,14 @@
                     "type": ["rdfs:Class"]
                 },
                 {
+                    "id": "_:properties",
+                    "name": "properties",
+                    "help": "Properties to attach to this class",
+                    "multiple": true,
+                    "type": ["rdf:Property"]
+                },
+
+                {
                     "id": "https://schema.org/sameAs",
                     "name": "schema:sameAs",
                     "help": "URL of an equivalent term",
@@ -157,18 +174,10 @@
                     "type": ["TextArea"]
                 },
                 {
-                    "id": "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
-                    "name": "rdfs:subPropertyOf",
-                    "label": "subPropertyOf",
-                    "help": "Is this a sub-type of a more general property",
-                    "multiple": false,
-                    "type": ["rdfs:Class"]
-                },
-                {
                     "id": "http://schema.org/domainIncludes",
                     "name": "schema:domainIncludes",
                     "label": "domainIncludes",
-                    "help": "What classes use this property (ie what domain does this property occur in)",
+                    "help": "Which classes use this property (ie what domain does this property occur in)",
                     "required": true,
                     "multiple": true,
                     "type": ["rdfs:Class"]
@@ -177,7 +186,7 @@
                     "id": "http://schema.org/rangeIncludes",
                     "name": "schema:rangeIncludes",
                     "label": "rangeIncludes",
-                    "help": "What classes are expected values for this range",
+                    "help": "Which classes are expected values for this range",
                     "required": true,
                     "multiple": true,
                     "type": ["rdfs:Class", "DefinedTerm"]
