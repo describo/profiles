@@ -110,7 +110,6 @@
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#label",
                     "name": "rdfs:label",
-                    "label": "label",
                     "help": "The label for this class",
                     "required": true,
                     "multiple": false,
@@ -119,7 +118,6 @@
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#comment",
                     "name": "rdfs:comment",
-                    "label": "comment",
                     "help": "A description of the Class",
                     "required": true,
                     "multiple": false,
@@ -128,7 +126,6 @@
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
                     "name": "rdfs:subClassOf",
-                    "label": "subClassOf",
                     "help": "Parent Class (if any)",
                     "required": true,
                     "multiple": false,
@@ -158,7 +155,6 @@
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#label",
                     "name": "rdfs:label",
-                    "label": "label",
                     "help": "The label for this property",
                     "required": true,
                     "multiple": false,
@@ -167,7 +163,6 @@
                 {
                     "id": "http://www.w3.org/2000/01/rdf-schema#comment",
                     "name": "rdfs:comment",
-                    "label": "comment",
                     "help": "A description of the Property",
                     "required": true,
                     "multiple": false,
@@ -176,7 +171,6 @@
                 {
                     "id": "http://schema.org/domainIncludes",
                     "name": "schema:domainIncludes",
-                    "label": "domainIncludes",
                     "help": "Which classes use this property (ie what domain does this property occur in)",
                     "required": true,
                     "multiple": true,
