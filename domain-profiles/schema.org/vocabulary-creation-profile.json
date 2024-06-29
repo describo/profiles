@@ -1,8 +1,8 @@
 {
     "metadata": {
-        "name": "Schema profile",
+        "name": "Vocabulary Creation Profile",
         "description": "Describo profile for creating Schema.org style vocabularies",
-        "version": "v1.0"
+        "version": "v1.1"
     },
     "context": [
         "https://w3id.org/ro/crate/1.1/context",
@@ -36,6 +36,16 @@
             "overflow": {
                 "label": "Other",
                 "order": 2
+            }
+        }
+    ],
+    "propertyAssociations": [
+        {
+            "property": "properties",
+            "propertyId": "_:properties",
+            "inverse": {
+                "property": "schema:domainIncludes",
+                "propertyId": "http://schema.org/domainIncludes"
             }
         }
     ],
@@ -179,7 +189,6 @@
                 {
                     "id": "http://schema.org/rangeIncludes",
                     "name": "schema:rangeIncludes",
-                    "label": "rangeIncludes",
                     "help": "Which classes are expected values for this range",
                     "required": true,
                     "multiple": true,
